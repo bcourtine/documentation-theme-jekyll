@@ -104,3 +104,12 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 
 # needed for sitemap.xml file only
 url: http://idratherbewriting.com
+
+# Asciidoc config
+asciidoctor:
+  attributes:
+    source-highlighter: pygments
+    pygments-stylesheet: !
+    icons: font
+    imagesdir: images
+    stylesdir: css
