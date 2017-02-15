@@ -1,0 +1,14 @@
+= Asciidoc introduction
+:Author: Benoît Courtine
+:Email: benoit.courtine@mre-medias.fr
+:Date: 2017-02-14
+:Revision: 1.0
+:page-tags: [asciidoc]
+:page-keywords:
+:page-summary: "Asciidoc introduction"
+:page-sidebar: asciidoc_sidebar
+:page-permalink: /asciidoc_introduction.html
+
+== Overview
+
+This page provides documentation, training, and other notes for using the Jekyll Documentation theme with Asciidoc documents.
