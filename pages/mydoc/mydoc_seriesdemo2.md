@@ -5,7 +5,7 @@ series: "ACME series"
 weight: 2
 last_updated: July 3, 2016
 sidebar: mydoc_sidebar
-permalink: mydoc_seriesdemo2.html
+permalink: /mydoc_seriesdemo2.html
 folder: mydoc
 ---
 

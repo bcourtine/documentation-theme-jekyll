@@ -5,7 +5,7 @@ keywords: series, connected articles, tutorials, hello world
 last_updated: July 3, 2016
 summary: "You can automatically link together topics belonging to the same series. This helps users know the context within a particular process."
 sidebar: mydoc_sidebar
-permalink: mydoc_series.html
+permalink: /mydoc_series.html
 folder: mydoc
 ---
 
@@ -30,7 +30,7 @@ First create an include that contains your series button:
             <li class="active"> → {{p.weight}}. {{p.title}}</li>
             {% else %}
             <li>
-                <a href="{{p.url | remove: "/"}}">{{p.weight}}. {{p.title}}</a>
+                <a href="{{p.url | prepend: site.baseurl}}">{{p.weight}}. {{p.title}}</a>
             </li>
             {% endif %}
             {% endif %}
@@ -58,7 +58,7 @@ Now create another include for the Next button at the bottom of the page. Copy t
     {% if p.series == "ACME series" %}
     {% assign nextTopic = page.weight | plus: "1"  %}
     {% if p.weight == nextTopic  %}
-    <a href="{{p.url}}"><button type="button" class="btn btn-primary">Next: {{p.weight}}  {{p.title}}</button></a>
+    <a href="{{p.url | prepend: site.baseurl}}"><button type="button" class="btn btn-primary">Next: {{p.weight}}  {{p.title}}</button></a>
     {% endif %}
     {% endif %}
     {% endfor %}
@@ -101,10 +101,10 @@ On each series page, add a link to the series button at the top and a link to th
 
 ## Changing the series drop-down color
 
-The Bootstrap menu uses the `primary` class for styling. If you change this class in your theme, the Bootstrap menu should automatically change color as well. You can also just use another Bootstrap class in your button code. Instead of `btn-primary`, use `btn-info` or `btn-warning`. See [Labels][mydoc_labels] for more Bootstrap button classes.
+The Bootstrap menu uses the `primary` class for styling. If you change this class in your theme, the Bootstrap menu should automatically change color as well. You can also just use another Bootstrap class in your button code. Instead of `btn-primary`, use `btn-info` or `btn-warning`. See [Labels][/mydoc_labels] for more Bootstrap button classes.
 
 ## Using a collection with your series
 
-Instead of copying and pasting the button includes on each of your series, you could also create a collection and define a layout for the collection that has the include code. For more information on creating collections, see [Collections][mydoc_collections] for more details.
+Instead of copying and pasting the button includes on each of your series, you could also create a collection and define a layout for the collection that has the include code. For more information on creating collections, see [Collections][/mydoc_collections] for more details.
 
 {% include links.html %}

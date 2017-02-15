@@ -4,7 +4,7 @@ tags: [getting_started, troubleshooting]
 keywords:
 summary: "Installation of Jekyll on Mac is usually less problematic than on Windows. However, you may run into permissions issues with Ruby that you must overcome. You should also use Bundler to be sure that you have all the required gems and other utilities on your computer to make the project run. "
 sidebar: mydoc_sidebar
-permalink: mydoc_install_jekyll_on_mac.html
+permalink: /mydoc_install_jekyll_on_mac.html
 folder: mydoc
 ---
 
@@ -101,7 +101,7 @@ gem install bundler
 
 If you're prompted to switch to superuser mode (`sudo`) to get the correct permissions to install Bundler in that directory, avoid doing this. All other applications that need to use Bundler will likely not have the needed permissions to run.
 
-Bundler goes out and retreives all the gems that are specified in a Jekyll project's Gemfile. If you have a gem that depends on other gems to work, Bundler will go out and retrieve all of the dependencies as well. (To learn more about Bundler, see [About Ruby Gems][mydoc_about_ruby_gems_etc].
+Bundler goes out and retreives all the gems that are specified in a Jekyll project's Gemfile. If you have a gem that depends on other gems to work, Bundler will go out and retrieve all of the dependencies as well. (To learn more about Bundler, see [About Ruby Gems][/mydoc_about_ruby_gems_etc].
 
 The vanilla Jekyll site you create through `jekyll new my-awesome-site` doesn't have a Gemfile, but many other themes (including the Documentation theme for Jekyll) do have a Gemfile.
 
@@ -154,4 +154,3 @@ To resolve the "No Github API authentication" error:
 Browse to your jekyll project and run `bundle exec jekyll serve`. Make an edit to a file and observe that no Github API errors appear when Jekyll rebuilds the project.
 
 {% include links.html %}
-

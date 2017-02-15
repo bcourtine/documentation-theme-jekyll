@@ -5,7 +5,7 @@ last_updated: July 3, 2016
 keywords: sidebar, accordion, yaml, iteration, for loop, navigation, attributes, conditional filtering
 summary: "The sidebar navigation uses a jQuery component called Navgoco. The sidebar is a somewhat complex part of the theme that remembers your current page, highlights the active item, stays in a fixed position on the page, and more. This page explains a bit about how the sidebar was put together."
 sidebar: mydoc_sidebar
-permalink: mydoc_sidebar_navigation.html
+permalink: /mydoc_sidebar_navigation.html
 folder: mydoc
 ---
 
@@ -60,7 +60,7 @@ For example, the sidebar.html file contains the following code:
 {% raw %}
 ```liquid
 {% elsif page.url == folderitem.url %}
-   <li class="active"><a href="{{folderitem.url | remove: "/"}}">{{folderitem.title}}</a></li>
+   <li class="active"><a href="{{folderitem.url | prepend: site.baseurl}}">{{folderitem.title}}</a></li>
 ```
 {% endraw %}
 
@@ -72,7 +72,7 @@ This is why the `url` value in the sidebar data file looks something like this:
 
 ```yaml
     - title: Understanding how the sidebar works
-      permalink: mydoc_understand_sidebar.html
+      permalink: /mydoc_understand_sidebar.html
       output: web, pdf
 ```
 

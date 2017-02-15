@@ -1,7 +1,7 @@
 ---
 title: Introduction
 sidebar: mydoc_sidebar
-permalink: mydoc_introduction.html
+permalink: /mydoc_introduction.html
 folder: mydoc
 ---
 
@@ -25,6 +25,6 @@ Some of the more prominent features of this theme include the following:
 
 ## Getting started
 
-To get started, see [Getting Started][index].
+To get started, see [Getting Started][/index].
 
 {% include links.html %}

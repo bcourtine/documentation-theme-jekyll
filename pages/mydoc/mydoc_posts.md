@@ -5,7 +5,7 @@ keywords: posts, blog, news, authoring, exclusion, frontmatter
 last_updated: Feb 25, 2016
 summary: "You can use posts when you want to create blogs or news type of content."
 sidebar: mydoc_sidebar
-permalink: mydoc_posts.html
+permalink: /mydoc_posts.html
 folder: mydoc
 ---
 
@@ -30,7 +30,7 @@ title: My sample post
 keywords: pages, authoring, exclusion, frontmatter
 summary: "This is some summary frontmatter for my sample post."
 sidebar: mydoc_sidebar
-permalink: mydoc_pages.html
+permalink: /mydoc_pages.html
 tags: content_types
 ---
 

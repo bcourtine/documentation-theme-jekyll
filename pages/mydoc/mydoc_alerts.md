@@ -5,7 +5,7 @@ keywords: notes, tips, cautions, warnings, admonitions
 last_updated: July 3, 2016
 summary: "You can insert notes, tips, warnings, and important alerts in your content. These notes make use of Bootstrap styling and are available through data references such as site.data.alerts.note."
 sidebar: mydoc_sidebar
-permalink: mydoc_alerts.html
+permalink: /mydoc_alerts.html
 folder: mydoc
 ---
 
@@ -15,7 +15,7 @@ Alerts are little warnings, info, or other messages that you have called out in 
 
 ## Alerts
 
-Similar to [inserting images][mydoc_images], you insert alerts through various includes that have been developed. These includes provide templates through which you pass parameters to easily populate the right HTML code.
+Similar to [inserting images][/mydoc_images], you insert alerts through various includes that have been developed. These includes provide templates through which you pass parameters to easily populate the right HTML code.
 
 ```
 {%raw%}{% include note.html content="This is my note. All the content I type here is treated as a single paragraph." %}{% endraw%}

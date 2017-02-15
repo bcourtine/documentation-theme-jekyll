@@ -6,7 +6,7 @@ last_updated: July 16, 2016
 keywords: tags, navigation, buttons, links, association
 summary: "Tags provide another means of navigation for your content. Unlike the table of contents, tags can show the content in a variety of arrangements and groupings. Implementing tags in this Jekyll theme is somewhat of a manual process."
 sidebar: mydoc_sidebar
-permalink: mydoc_tags.html
+permalink: /mydoc_tags.html
 folder: mydoc
 ---
 
@@ -16,7 +16,7 @@ You can add tags to pages by adding `tags` in the frontmatter with values inside
 ```
 ---
 title: 5.0 Release Notes
-permalink: release_notes_5_0.html
+permalink: /release_notes_5_0.html
 tags: [formatting, single_sourcing]
 ---
 ```
@@ -62,7 +62,7 @@ Tags have a few components.
 title: "Collaboration pages"
 tagName: collaboration
 search: exclude
-permalink: tag_collaboration.html
+permalink: /tag_collaboration.html
 sidebar: mydoc_sidebar
 ---
 {% include taglogic.html %}
@@ -83,7 +83,7 @@ sidebar: mydoc_sidebar
 {% assign projectTags = site.data.tags.allowed-tags %}
 {% for tag in page.tags %}
 {% if projectTags contains tag %}
-<a href="{{ "tag_" | append: tag | append: ".html" }}" class="btn btn-default navbar-btn cursorNorm" role="button">{{page.tagName}}{{tag}}</a>
+<a href="{{ "/tag_" | prepend: site.baseurl | append: tag | append: ".html" }}" class="btn btn-default navbar-btn cursorNorm" role="button">{{page.tagName}}{{tag}}</a>
 {% endif %}
 {% endfor %}
 {% endif %}
@@ -93,7 +93,7 @@ sidebar: mydoc_sidebar
 
 Because this code appears on the \_layouts/page.html file by default, you don't need to do anything in your page to get the tags to appear. However, if you want to alter the placement or change the button color, you can do so within the \_includes/taglogic.html file.
 
-You can change the button color by changing the class on the button from `btn-info` to one of the other button classes bootstrap provides. See [Labels][mydoc_labels] for more options on button class names.
+You can change the button color by changing the class on the button from `btn-info` to one of the other button classes bootstrap provides. See [Labels][/mydoc_labels] for more options on button class names.
 
 ## Retrieving pages for a specific tag
 
@@ -106,7 +106,7 @@ Getting started pages:
 {% for page in site.pages %}
 {% for tag in page.tags %}
 {% if tag == "getting_started" %}
-<li><a href="{{page.url | remove: "/" }}">{{page.title}}</a></li>
+<li><a href="{{page.url | prepend: site.baseurl }}">{{page.title}}</a></li>
 {% endif %}
 {% endfor %}
 {% endfor %}
@@ -121,7 +121,7 @@ Getting started pages:
 {% for page in site.pages %}
 {% for tag in page.tags %}
 {% if tag == "getting_started" %}
-<li><a href="{{page.url | remove: "/" }}">{{page.title}}</a></li>
+<li><a href="{{page.url | prepend: site.baseurl }}">{{page.title}}</a></li>
 {% endif %}
 {% endfor %}
 {% endfor %}
@@ -137,7 +137,7 @@ Getting started pages:
 {% for page in sorted_pages %}
 {% for tag in page.tags %}
 {% if tag == "getting_started" %}
-<li><a href="{{page.url | remove: "/" }}">{{page.title}}</a></li>
+<li><a href="{{page.url | prepend: site.baseurl }}">{{page.title}}</a></li>
 {% endif %}
 {% endfor %}
 {% endfor %}
@@ -153,7 +153,7 @@ Getting started pages:
 {% for page in sorted_pages %}
 {% for tag in page.tags %}
 {% if tag == "getting_started" %}
-<li><a href="{{page.url | remove: "/"}}">{{page.title}}</a></li>
+<li><a href="{{page.url | prepend: site.baseurl }}">{{page.title}}</a></li>
 {% endif %}
 {% endfor %}
 {% endfor %}
@@ -181,6 +181,6 @@ If you don't want tags to appear at all on your page, remove the tags property f
 
 Since you may have many tags and find it difficult to remember what tags are allowed, I recommend creating a template that prepopulates all your frontmatter with all possible tags. Then just remove the tags that don't apply.
 
-See [WebStorm Text Editor][mydoc_webstorm_text_editor] for tips on creating file templates in WebStorm.
+See [WebStorm Text Editor][/mydoc_webstorm_text_editor] for tips on creating file templates in WebStorm.
 
 {% include links.html %}

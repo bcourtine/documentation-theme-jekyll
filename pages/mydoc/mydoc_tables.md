@@ -6,7 +6,7 @@ last_updated: July 16, 2016
 datatable: true
 summary: "You can format tables using either multimarkdown syntax or HTML. You can also use jQuery datatables (a plugin) if you need more robust tables."
 sidebar: mydoc_sidebar
-permalink: mydoc_tables.html
+permalink: /mydoc_tables.html
 folder: mydoc
 ---
 
@@ -65,7 +65,7 @@ If you need a more sophisticated table syntax, use HTML syntax for the table. Al
 <tbody>
 <tr>
 <td markdown="span">First column **fields**</td>
-<td markdown="span">Some descriptive text. This is a markdown link to [Google](http://google.com). Or see [some link][mydoc_tags].</td>
+<td markdown="span">Some descriptive text. This is a markdown link to [Google](http://google.com). Or see [some link][/mydoc_tags].</td>
 </tr>
 <tr>
 <td markdown="span">Second column **fields**</td>
@@ -91,11 +91,11 @@ If you need a more sophisticated table syntax, use HTML syntax for the table. Al
 <tbody>
 <tr>
 <td markdown="span">First column **fields**</td>
-<td markdown="span">Some descriptive text. This is a markdown link to [Google](http://google.com). Or see [some link][mydoc_tags].</td>
+<td markdown="span">Some descriptive text. This is a markdown link to [Google](http://google.com). Or see [some link][/mydoc_tags].</td>
 </tr>
 <tr>
 <td markdown="span">Second column **fields**</td>
-<td markdown="span">Some more descriptive text. 
+<td markdown="span">Some more descriptive text.
 </td>
 </tr>
 </tbody>

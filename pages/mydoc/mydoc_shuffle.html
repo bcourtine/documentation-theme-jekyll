@@ -4,7 +4,7 @@ tags: [special_layouts]
 last_updated: November 30, 2015
 keywords: shuffle, card layout, dynamic grid, doc portal, support portal
 summary: "This layout shows an example of a knowledge-base style navigation system, where there is no hierarchy, just groups of pages that have certain tags."
-permalink: mydoc_shuffle.html
+permalink: /mydoc_shuffle.html
 sidebar: mydoc_sidebar
 folder: mydoc
 ---
@@ -16,8 +16,8 @@ folder: mydoc
 {% endif %}
 
 {% unless site.output == "pdf" %}
-<script src="js/jquery.shuffle.min.js"></script>
-<script src="js/jquery.ba-throttle-debounce.min.js"></script>
+<script src="{{ "js/jquery.shuffle.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "js/jquery.ba-throttle-debounce.min.js" | prepend: site.baseurl }}"></script>
 {% endunless %}
 
       <div class="filter-options">
@@ -28,7 +28,7 @@ folder: mydoc
       <button class="btn btn-primary" data-group="content-types">Content types</button>
           <button class="btn btn-primary" data-group="single_sourcing">Single Sourcing</button>
       <button class="btn btn-primary" data-group="special_layouts">Special Layouts</button>
-    </div>      
+    </div>
 
 <div id="grid" class="row">
 
@@ -38,21 +38,21 @@ folder: mydoc
                <div class="panel panel-default">
                <div class="panel-heading">Getting started</div>
                <div class="panel-body">
-                  If you're getting started with Jekyll, see the links in this section. It will take you from the beginning level to comfortable. 
+                  If you're getting started with Jekyll, see the links in this section. It will take you from the beginning level to comfortable.
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
                 {% if tag == "getting_started" %}
-                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                  <li><a href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
-                {% endfor %} 
+                {% endfor %}
                   </ul>
                </div>
             </div>
-    
+
     </div>
-   
+
 
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["content-types"]'>
 
@@ -64,14 +64,14 @@ folder: mydoc
                     {% for page in site.pages %}
                     {% for tag in page.tags %}
                     {% if tag == "content-types" %}
-                    <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                    <li><a href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a></li>
                     {% endif %}
                     {% endfor %}
                     {% endfor %}
                 </ul>
             </div>
         </div>
-        
+
     </div>
 
 
@@ -81,12 +81,12 @@ folder: mydoc
                 <div class="panel panel-default">
                <div class="panel-heading">Formatting</div>
                <div class="panel-body">
-                  These topics get into formatting syntax, such as images and tables, that you'll use on each of your pages: 
+                  These topics get into formatting syntax, such as images and tables, that you'll use on each of your pages:
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
                 {% if tag == "formatting" %}
-                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                  <li><a href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
                 {% endfor %}
@@ -97,7 +97,7 @@ folder: mydoc
     </div>
 
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["single_sourcing"]'>
-         
+
       <div class="panel panel-default">
                <div class="panel-heading">Single Sourcing</div>
                <div class="panel-body">These topics cover strategies for single_sourcing. Single sourcing refers to strategies for re-using the same source in different outputs for different audiences or purposes.
@@ -105,10 +105,10 @@ folder: mydoc
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
                 {% if tag == "single_sourcing" %}
-                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                  <li><a href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
-                {% endfor %} 
+                {% endfor %}
                </ul>
             </div>
          </div>
@@ -124,7 +124,7 @@ folder: mydoc
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
                 {% if tag == "publishing" %}
-                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                  <li><a href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
                 {% endfor %}
@@ -144,17 +144,17 @@ folder: mydoc
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
                 {% if tag == "special_layouts" %}
-                     <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                     <li><a href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
-                {% endfor %} 
+                {% endfor %}
                   </ul>
                </div>
             </div>
 
     </div>
           <!-- sizer -->
-      <div class="col-xs-6 col-sm-4 col-md-1 shuffle_sizer"></div>          
+      <div class="col-xs-6 col-sm-4 col-md-1 shuffle_sizer"></div>
 
 
     </div><!-- /#grid -->
@@ -164,4 +164,3 @@ folder: mydoc
 {% endunless %}
 
 {{site.data.alerts.note}} This was mostly an experiment to see if I could break away from the hierarchical TOC and provide a different way of arranging the content. However, this layout is somewhat problematic because it doesn't allow you to browse other navigation options on the side while viewing a topic.{{site.data.alerts.end}}
-

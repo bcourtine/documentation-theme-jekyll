@@ -1,6 +1,6 @@
 ---
 title: Generating PDFs
-permalink: mydoc_generating_pdfs.html
+permalink: /mydoc_generating_pdfs.html
 tags: [publishing, single_sourcing, content_types]
 keywords: PDF, prince, prince XML, ant, xsl fo
 last_updated: July 3, 2016
@@ -372,7 +372,7 @@ javascript content here ...
 ```
 {% endraw %}
 
-For more detail about using `unless` in conditional logic, see [Conditional logic][mydoc_conditional_logic]. What this code means is "run this code unless this value is the case."
+For more detail about using `unless` in conditional logic, see [Conditional logic][/mydoc_conditional_logic]. What this code means is "run this code unless this value is the case."
 
 ## Overriding Bootstrap Print Styles
 
