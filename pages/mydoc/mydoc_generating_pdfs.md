@@ -372,7 +372,7 @@ javascript content here ...
 ```
 {% endraw %}
 
-For more detail about using `unless` in conditional logic, see [Conditional logic][/mydoc_conditional_logic]. What this code means is "run this code unless this value is the case."
+For more detail about using `unless` in conditional logic, see [Conditional logic][{{ site.baseurl }}/mydoc_conditional_logic]. What this code means is "run this code unless this value is the case."
 
 ## Overriding Bootstrap Print Styles
 

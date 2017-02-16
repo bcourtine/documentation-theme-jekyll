@@ -151,7 +151,7 @@ This script first removes the project folder on /var/www/html/yourpublishingdire
 
 Note that the delete part of the script (`rm -rf`) works really well. It annihilates a folder in a heartbeat and doesn't give you any warning prompts, so make sure you have it set up correctly.
 
-Also, in case you haven't set up the SSH publishing without a password, see [Getting around the password prompts in SCP][/mydoc_no_password_prompts_scp]. Otherwise the script will stop and ping you to enter your password for each directory it transfers.
+Also, in case you haven't set up the SSH publishing without a password, see [Getting around the password prompts in SCP][{{ site.baseurl }}/mydoc_no_password_prompts_scp]. Otherwise the script will stop and ping you to enter your password for each directory it transfers.
 
 ### (Optional) Push to repositories
 

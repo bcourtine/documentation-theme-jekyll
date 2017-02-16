@@ -13,8 +13,8 @@ folder: mydoc
 
 You can implement workflow maps at the top of your pages. This is helpful if you're describing a process that involves multiple topics. See the following demos:
 
-*  [Simple workflow maps][/p2_sample1]
-*  [Complex workflow maps][/p2_sample6]
+*  [Simple workflow maps][{{ site.baseurl }}/p2_sample1]
+*  [Complex workflow maps][{{ site.baseurl }}/p2_sample6]
 
 
 ## Simple workflow maps

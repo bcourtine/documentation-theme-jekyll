@@ -19,8 +19,8 @@ First download or clone the theme from the [Github repo](https://github.com/tomj
 
 If you've never installed or run a Jekyll site locally on your computer, follow these instructions to install Jekyll:
 
-* [Install Jekyll on Mac][/mydoc_install_jekyll_on_mac]
-* [Install Jekyll on Windows][/mydoc_install_jekyll_on_windows]
+* [Install Jekyll on Mac][{{ site.baseurl }}/mydoc_install_jekyll_on_mac]
+* [Install Jekyll on Windows][{{ site.baseurl }}/mydoc_install_jekyll_on_windows]
 
 ### 3. Install Bundler
 
@@ -138,7 +138,7 @@ Note that your sidebar can only have 2 levels. Given that each product has its o
 
 {% include note.html content="Note that each level must have at least one topic before the next level starts. You can't have a second level that contains multiple third levels without having at least one standalone topic in the second level." %}
 
-For more detail on the sidebar, see [Sidebar navigation][/mydoc_sidebar_navigation].
+For more detail on the sidebar, see [Sidebar navigation][{{ site.baseurl }}/mydoc_sidebar_navigation].
 
 ## Sidebar syntax
 
@@ -214,7 +214,7 @@ To accommodate the title page and table of contents in PDF outputs, each product
 
 Leave the output as `output: pdf` for these frontmatter pages so that they don't appear in the web output.
 
-For more detail on the sidebar, see [Sidebar navigation][/mydoc_sidebar_navigation] and [YAML tutorial][/mydoc_yaml_tutorial].
+For more detail on the sidebar, see [Sidebar navigation][{{ site.baseurl }}/mydoc_sidebar_navigation] and [YAML tutorial][{{ site.baseurl }}/mydoc_yaml_tutorial].
 
 ## Relative links and offline viewing
 
@@ -250,7 +250,7 @@ If you don't want the mini-TOC to show on a page (such as for the homepage or la
 
 The `permalink` value should be the same as your filename and include the ".html" file extension.
 
-For more detail, see [Pages][/mydoc_pages].
+For more detail, see [Pages][{{ site.baseurl }}/mydoc_pages].
 
 ## Where to store your documentation topics
 
@@ -258,7 +258,7 @@ You can store your files for each product inside subfolders following the patter
 
 Note that product1, product2, and mydoc are all just sample content to demonstrate how to add multiple products into the theme. You can freely delete that content.
 
-For more information, see [Pages][/mydoc_pages] and [Posts][/mydoc_posts].
+For more information, see [Pages][{{ site.baseurl }}/mydoc_pages] and [Posts][{{ site.baseurl }}/mydoc_posts].
 
 ## Configure the top navigation
 
@@ -276,7 +276,7 @@ If you're on Windows, install [Git Bash client](https://git-for-windows.github.i
 
 Open up the css/printstyles.css file and customize the email address (`youremail@domain.com`) that is listed there. This email address appears in the bottom left footer of the PDF output. You'll also need to create a PDF configuration file following the examples shown in the pdfconfigs folder, and also customize some build scripts following the same pattern shown in the root: pdf-product1.sh
 
-See the section on [Generating PDFs][/mydoc_generating_pdfs] for more details about setting the theme up for this output.
+See the section on [Generating PDFs][{{ site.baseurl }}/mydoc_generating_pdfs] for more details about setting the theme up for this output.
 
 ## Blogs / News
 
@@ -284,7 +284,7 @@ For blog posts, create your markdown files in the \_posts folder following the s
 
 The news/news.html file displays the posts, and the news_archive.html file shows a yearly history of posts. In documentation, you might use the news to highlight product features outside of your documentation, or to provide release notes and other updates.
 
-See [Posts][/mydoc_posts] for more information.
+See [Posts][{{ site.baseurl }}/mydoc_posts] for more information.
 
 ## Markdown
 
@@ -316,7 +316,7 @@ See the topics under "Formatting" in the sidebar for more information.
 
 ## Automated links
 
-If you want to use an automated system for managing links, see [Automated Links][/mydoc_hyperlinks.html#automatedlinks]. This approach automatically creates a list of Markdown references to simplify linking.
+If you want to use an automated system for managing links, see [Automated Links][{{ site.baseurl }}/mydoc_hyperlinks.html#automatedlinks]. This approach automatically creates a list of Markdown references to simplify linking.
 
 ## Other instructions
 

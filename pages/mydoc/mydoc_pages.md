@@ -167,7 +167,7 @@ Then you can reference it with a link like this on the same page:
 
 [Some link](#someIdTag)
 
-For details about linking to headings on different pages, see [Automated links to headings on pages][/mydoc_hyperlinks.html#bookmarklinks].
+For details about linking to headings on different pages, see [Automated links to headings on pages][{{ site.baseurl }}/mydoc_hyperlinks.html#bookmarklinks].
 
 ## Specify a particular page layout
 

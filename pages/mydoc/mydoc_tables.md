@@ -65,7 +65,7 @@ If you need a more sophisticated table syntax, use HTML syntax for the table. Al
 <tbody>
 <tr>
 <td markdown="span">First column **fields**</td>
-<td markdown="span">Some descriptive text. This is a markdown link to [Google](http://google.com). Or see [some link][/mydoc_tags].</td>
+<td markdown="span">Some descriptive text. This is a markdown link to [Google](http://google.com). Or see [some link][{{ site.baseurl }}/mydoc_tags].</td>
 </tr>
 <tr>
 <td markdown="span">Second column **fields**</td>
@@ -91,7 +91,7 @@ If you need a more sophisticated table syntax, use HTML syntax for the table. Al
 <tbody>
 <tr>
 <td markdown="span">First column **fields**</td>
-<td markdown="span">Some descriptive text. This is a markdown link to [Google](http://google.com). Or see [some link][/mydoc_tags].</td>
+<td markdown="span">Some descriptive text. This is a markdown link to [Google](http://google.com). Or see [some link][{{ site.baseurl }}/mydoc_tags].</td>
 </tr>
 <tr>
 <td markdown="span">Second column **fields**</td>

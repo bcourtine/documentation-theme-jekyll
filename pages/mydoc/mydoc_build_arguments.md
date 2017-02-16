@@ -39,7 +39,7 @@ If you have a long build argument and don't want to enter it every time in Jekyl
 . myscript.sh
 ```
 
-My preference is to add the scripts to profiles in iTerm. See [iTerm Profiles][/mydoc_iterm_profiles] for more details.
+My preference is to add the scripts to profiles in iTerm. See [iTerm Profiles][{{ site.baseurl }}/mydoc_iterm_profiles] for more details.
 
 ## Stop a server
 

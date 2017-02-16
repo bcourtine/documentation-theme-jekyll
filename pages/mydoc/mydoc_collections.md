@@ -31,7 +31,7 @@ See [Collections in the Jekyll documentation](http://jekyllrb.com/docs/collectio
 
 ## How to use collections
 
-I haven't found a huge use for collections in normal documentation. However, I did find a use for collections in generating a tooltip file that would be used for delivering tooltips to a user interface from text files in the documentation. See [Help APIs and UI tooltips][/mydoc_help_api] for details.
+I haven't found a huge use for collections in normal documentation. However, I did find a use for collections in generating a tooltip file that would be used for delivering tooltips to a user interface from text files in the documentation. See [Help APIs and UI tooltips][{{ site.baseurl }}/mydoc_help_api] for details.
 
 ## Video tutorial on collections
 

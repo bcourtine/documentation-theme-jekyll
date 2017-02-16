@@ -101,10 +101,10 @@ On each series page, add a link to the series button at the top and a link to th
 
 ## Changing the series drop-down color
 
-The Bootstrap menu uses the `primary` class for styling. If you change this class in your theme, the Bootstrap menu should automatically change color as well. You can also just use another Bootstrap class in your button code. Instead of `btn-primary`, use `btn-info` or `btn-warning`. See [Labels][/mydoc_labels] for more Bootstrap button classes.
+The Bootstrap menu uses the `primary` class for styling. If you change this class in your theme, the Bootstrap menu should automatically change color as well. You can also just use another Bootstrap class in your button code. Instead of `btn-primary`, use `btn-info` or `btn-warning`. See [Labels][{{ site.baseurl }}/mydoc_labels] for more Bootstrap button classes.
 
 ## Using a collection with your series
 
-Instead of copying and pasting the button includes on each of your series, you could also create a collection and define a layout for the collection that has the include code. For more information on creating collections, see [Collections][/mydoc_collections] for more details.
+Instead of copying and pasting the button includes on each of your series, you could also create a collection and define a layout for the collection that has the include code. For more information on creating collections, see [Collections][{{ site.baseurl }}/mydoc_collections] for more details.
 
 {% include links.html %}

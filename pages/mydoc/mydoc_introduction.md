@@ -25,6 +25,6 @@ Some of the more prominent features of this theme include the following:
 
 ## Getting started
 
-To get started, see [Getting Started][/index].
+To get started, see [Getting Started][{{ site.baseurl }}/index].
 
 {% include links.html %}
