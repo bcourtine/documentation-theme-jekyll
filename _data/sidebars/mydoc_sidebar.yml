@@ -156,6 +156,10 @@ entries:
       url: /mydoc_labels.html
       output: web, pdf
 
+    - title: Site URLs
+      url: /mydoc/mydoc_site_urls.html
+      output: web, pdf
+
     - title: Links
       url: /mydoc_hyperlinks.html
       output: web, pdf
