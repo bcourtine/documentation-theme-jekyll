@@ -1,13 +1,13 @@
 = Asciidoc introduction
 :Author: Benoît Courtine
-:Email: benoit.courtine@mre-medias.fr
+:Email: contact@courtine.org
 :Date: 2017-02-14
 :Revision: 1.0
 :page-tags: [asciidoc]
 :page-keywords:
 :page-summary: "Asciidoc introduction"
 :page-sidebar: asciidoc_sidebar
-:page-permalink: /asciidoc_introduction.html
+:page-permalink: asciidoc_introduction.html
 
 == Overview
 

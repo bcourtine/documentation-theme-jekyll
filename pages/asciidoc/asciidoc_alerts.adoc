@@ -1,0 +1,156 @@
+# Asciidoc Alerts
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-02
+:Revision: 1.0
+:page-tags: [asciidoc,formatting]
+:page-keywords:
+:page-summary: "You can insert notes, tips, warnings, and important alerts in your content. These notes make use of Bootstrap styling."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_alerts.html
+:page-liquid:
+
+## About alerts
+
+Alerts are little warnings, info, or other messages that you have called out in special formatting.
+
+## Alerts
+
+Alerts are a native function of Asciidoc syntax: see the "admonition" section of the
+http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#more-delimited-blocks[Syntax Quick Reference Guide].
+
+### Single paragraph alerts
+
+[source]
+----
+NOTE: This is my note. All the content I type here is treated as a single paragraph.
+----
+
+Here's the result:
+
+NOTE: This is my note. All the content I type here is treated as a single paragraph.
+
+### Multiple paragraph alerts
+
+Using the block syntax, an alert can contain multiple paragraphs with complex formatting (lists, tables, etc.).
+
+[source]
+----
+[TIP]
+====
+Here is my tip.
+
+With a second paragraph... and a list:
+
+* Item 1
+* Item 2
+====
+----
+
+Here is the result:
+
+[TIP]
+====
+Here is my tip.
+
+With a second paragraph, and a list:
+
+* Item 1
+* Item 2
+====
+
+### Types of alerts available
+
+There are four types of alerts you can leverage:
+
+* NOTE
+* TIP
+* WARNING
+* IMPORTANT
+
+Here is the result for each type:
+
+NOTE: This is my note. All the content I type here is treated as a single paragraph.
+
+IMPORTANT: This is my important message. All the content I type here is treated as a single paragraph.
+
+WARNING: This is my warning. All the content I type here is treated as a single paragraph.
+
+TIP: This is my tip. All the content I type here is treated as a single paragraph.
+
+
+## Callouts
+
+### Usage
+
+link:mydoc_alerts.html[Theme native callouts] are not supported yet using Asciidoc syntax. They can be emulated
+using HTML in a "passthrough" block:
+
+[source]
+----
+++++
+<div class="bs-callout bs-callout-primary">Callout</div>
+++++
+----
+
+Here's the result:
+
+++++
+<div class="bs-callout bs-callout-primary">Callout</div>
+++++
+
+An alternative way is to enable the `page-liquid` attribute in the header, and to use the `include` macro in a
+passthrough block:
+
+[source]
+----
+++++
+{% raw %}{% include callout.html content="This is my callout. It has a border on the left whose color you define by passing a type parameter. I typically use this style of callout when I have more information that I want to share, often spanning multiple paragraphs. " type="primary" %} {% endraw %}
+++++
+----
+
+Here's the result:
+
+++++
+{% include callout.html content="This is my callout. It has a border on the left whose color you define by passing a
+type parameter. I typically use this style of callout when I have more information that I want to share, often spanning
+multiple paragraphs." type="primary" %}
+++++
+
+IMPORTANT: It's just a stylistic preference whether to use an alert or callout. *But since alerts are native in Asciidoc,
+I recommand using alerts.*
+
+### Callout types
+
+The available callout types are :
+
+* `danger` (red)
+* `default` (grey)
+* `primary` (dark blue)
+* `success` (green)
+* `info` (light blue)
+* `warning` (yellow)
+
+Here's the result for each type:
+
+++++
+<div class="bs-callout bs-callout-danger">Danger callout</div>
+<div class="bs-callout bs-callout-default">Default callout</div>
+<div class="bs-callout bs-callout-primary">Primary callout</div>
+<div class="bs-callout bs-callout-success">Success callout</div>
+<div class="bs-callout bs-callout-info">Info callout</div>
+<div class="bs-callout bs-callout-warning">Warning callout</div>
+++++
+
+## Use Liquid variables inside parameters with includes
+
+IMPORTANT: In order to use liquid variables and filters, the page header must contain the `page-liquid` attribute.
+
+[source]
+----
+{% raw %}WARNING: The "{{ site.company_name }}" is pleased to announce an upcoming release.{% endraw %}
+----
+
+Here is the result:
+
+WARNING: The "{{ site.company_name }}" is pleased to announce an upcoming release.

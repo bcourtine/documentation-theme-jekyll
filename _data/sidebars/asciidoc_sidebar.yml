@@ -18,3 +18,11 @@ entries:
     - title: Asciidoc Introduction
       url: /asciidoc_introduction.html
       output: web, pdf
+
+  - title: Formatting
+    output: web, pdf
+    folderitems:
+
+    - title: Asciidoc Alerts
+      url: /asciidoc_alerts.html
+      output: web, pdf
