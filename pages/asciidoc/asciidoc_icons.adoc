@@ -1,0 +1,79 @@
+# Asciidoc Icons
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-05
+:Revision: 1.0
+:page-tags: [asciidoc,formatting]
+:page-keywords:
+:page-summary: "You can integrate font icons through the Font Awesome and Glyphical Halflings libraries. These libraries allow you to embed icons through their libraries delivered as a link reference. You don't need any image libraries downloaded in your project."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_icons.html
+
+## Font icon options
+The theme has two font icon sets integrated: Font Awesome and Glyphicons Halflings. The latter is part of Bootstrap,
+while the former is independent. Font icons allow you to insert icons drawn as vectors from a CDN (so you don't have
+any local images on your own site).
+
+Go to the http://fortawesome.github.io/Font-Awesome/icons/[Font Awesome library] to see the available icons.
+
+## Icons in an Asciidoc document
+
+### Inline icon
+
+Icons can be integrated easily in an asciidoc document, using the `icon` macro:
+
+[source]
+----
+Text with an inline icon:camera[] icon.
+----
+
+Here is the result: Text with an inline icon:camera[] icon.
+
+### Icon options
+
+The `icon` macro can be used with several parameters:
+
+* `size`: modify the icon size.
+* `flip`: verical or horizontal flip.
+* `rotate`: icon rotation (in °).
+* `role`: color
+
+[source]
+----
+icon:file[size="2x"] (abbreviated icon:file[2x])
+
+icon:comment[flip="horizontal",role="red",size="3x"]
+----
+
+Here is the result:
+
+icon:file[size="2x"]
+
+icon:comment[flip="horizontal",role="red",size="3x"]
+
+## Glyphicon icons available
+
+Glyphicons work similarly to Font Awesome. Go to the http://getbootstrap.com/components/#glyphicons[Glyphicons library]
+to see the icons available.
+
+Since this icons are not managed by the Asciidoc `icon` macro, Glyphicons have to be included using HTML code in a
+passthru block:
+
+TIP: "`gi-2x`"... "`gi-5x`" classes can be used to change the glyphicon size.
+
+[source]
+----
+++++
+<span class="glyphicon glyphicon-globe gi-3x"></span>
+<span class="glyphicon glyphicon-camera gi-3x"></span>
+<span class="glyphicon glyphicon-comment gi-3x"></span>
+++++
+----
+
+And here's the result:
+
+++++
+<span class="glyphicon glyphicon-globe gi-3x"></span>
+<span class="glyphicon glyphicon-camera gi-3x"></span>
+<span class="glyphicon glyphicon-comment gi-3x"></span>
+++++

@@ -26,3 +26,7 @@ entries:
     - title: Asciidoc Alerts
       url: /asciidoc_alerts.html
       output: web, pdf
+
+    - title: Asciidoc Icons
+      url: /asciidoc_icons.html
+      output: web, pdf
