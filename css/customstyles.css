@@ -59,15 +59,10 @@ body {
     color: #5bc0de;
 }
 
-
 .gi-2x{font-size: 2em;}
 .gi-3x{font-size: 3em;}
 .gi-4x{font-size: 4em;}
 .gi-5x{font-size: 5em;}
-
-
-
-
 
 .breadcrumb > .active {color: #777 !important;}
 
@@ -178,20 +173,9 @@ table th[class*="col-"] {
     float: none;
 }
 
-
-table td:first-child {
-    width: 150px;
-    /*font-weight:bold;*/
-}
-
 table.boldFirstColumn td:first-child {
     font-weight: bold;
 }
-
-table tr td {
-    hyphens: auto;
-}
-
 
 p.external a {
     text-align:right;
@@ -495,9 +479,6 @@ figcaption {
 
 table.dataTable thead {
     background-color: #444;
-}
-table td {
-    hyphens: auto;
 }
 
 section table tr.success {
