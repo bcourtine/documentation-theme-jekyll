@@ -61,12 +61,13 @@ With a second paragraph, and a list:
 
 ### Types of alerts available
 
-There are four types of alerts you can leverage:
+There are five types of alerts you can leverage:
 
 * NOTE
 * TIP
 * WARNING
 * IMPORTANT
+* CAUTION (using the WARNING style, since Bootstrap provides only 4 different alert styles)
 
 Here is the result for each type:
 
@@ -75,6 +76,8 @@ NOTE: This is my note. All the content I type here is treated as a single paragr
 IMPORTANT: This is my important message. All the content I type here is treated as a single paragraph.
 
 WARNING: This is my warning. All the content I type here is treated as a single paragraph.
+
+CAUTION: This is my caution. All the content I type here is treated as a single paragraph.
 
 TIP: This is my tip. All the content I type here is treated as a single paragraph.
 

@@ -5,6 +5,8 @@
 <div class="alert alert-success" title="<%= @caption %>"><i class="fa fa-check-square-o"></i> <b>Tip:</b>
 <% elsif attr? :name, 'warning' %>
 <div class="alert alert-danger" title="<%= @caption %>"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b>
+<% elsif attr? :name, 'caution' %>
+<div class="alert alert-danger" title="<%= @caption %>"><i class="fa fa-exclamation-circle"></i> <b>Caution:</b>
 <% elsif attr? :name, 'important' %>
 <div class="alert alert-warning" title="<%= @caption %>"><i class="fa fa-warning"></i> <b>Important:</b>
 <% end %>
