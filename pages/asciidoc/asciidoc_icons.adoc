@@ -51,12 +51,39 @@ icon:file[size="2x"]
 
 icon:comment[flip="horizontal",role="red",size="3x"]
 
+### Other icon sets available
+
+By default, Asciidoc uses Font Awesome icons. But other icon sets are supported:
+
+* `fa` for Font Awesome (default).
+* `octicon` for GitHub Octicons.
+* `fi` for Foundation Icons.
+* `pf` for Payment Font.
+
+See https://github.com/jessedoyle/prawn-icon[Prawn Icon] for an updated list of supported icon fonts.
+
+The default icon set can be defined:
+
+* For the whole site (in the Asciidoctor block of `_config.yml`), using the `icon-set` property.
+* For a page, using the `icon-set` property in the header.
+
+A different set can be used for a particular icon, using the `set` property.
+
+.Code for a Payment icon
+[source]
+----
+icon:bancontact-mister-cash[set="pf"]
+----
+
+WARNING: Theses icons will be rendered only if the font CSS is available in the `head.html` include file. By default,
+only Font Awesome (and Glyphicons) are included.
+
 ## Glyphicon icons available
 
 Glyphicons work similarly to Font Awesome. Go to the http://getbootstrap.com/components/#glyphicons[Glyphicons library]
 to see the icons available.
 
-Since this icons are not managed by the Asciidoc `icon` macro, Glyphicons have to be included using HTML code in a
+Since this icons are not managed yet by the Asciidoc `icon` macro, Glyphicons have to be included using HTML code in a
 passthru block:
 
 TIP: "`gi-2x`"... "`gi-5x`" classes can be used to change the glyphicon size.
