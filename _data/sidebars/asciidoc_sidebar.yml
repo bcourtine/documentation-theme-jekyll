@@ -30,3 +30,7 @@ entries:
     - title: Asciidoc Icons
       url: /asciidoc_icons.html
       output: web, pdf
+
+    - title: Asciidoc code samples
+      url: /asciidoc_code_samples.html
+      output: web, pdf

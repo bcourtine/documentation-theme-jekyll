@@ -1,0 +1,32 @@
+# Asciidoc code samples
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-06
+:Revision: 1.0
+:page-tags: [asciidoc,formatting]
+:page-keywords: code samples syntax highlighting
+:page-summary: "You can use fenced code blocks with the language specified."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_code_samples.html
+
+## Code Samples
+
+Use source blocks with the language specified, like this:
+
+[source]
+----
+ [source, js]
+ ----
+ console.log('hello');
+ ----
+----
+
+**Result:**
+
+[source, js]
+----
+console.log('hello');
+----
+
+For the list of supported languages you can use (similar to `js` for JavaScript), see
+https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers[Supported languages].
