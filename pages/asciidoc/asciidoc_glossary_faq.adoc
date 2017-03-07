@@ -21,7 +21,10 @@ Asciidoc has special blocks to generate glossaries and FAQs.
 A glossary term:: The corresponding definition.
 
 A second glossary term::
-  The corresponding (indented) definition.
+  A complex definition, with a bundled list:
+  * Item 1
+  .. Sub-Item 1
+  .. Sub-Item 2
 ----
 
 Here is the result:
@@ -30,7 +33,10 @@ Here is the result:
 A glossary term:: The corresponding definition.
 
 A second glossary term::
-  The corresponding definition 2.
+  A complex definition, with a bundled list:
+  * Item 1
+  .. Sub-Item 1
+  .. Sub-Item 2
 
 ## Horizontal Glossary
 
@@ -40,7 +46,10 @@ A second glossary term::
 A glossary term:: The corresponding definition.
 
 A second glossary term::
-  The corresponding definition 2.
+  A complex definition, with a bundled list:
+  * Item 1
+  .. Sub-Item 1
+  .. Sub-Item 2
 ----
 
 Here is the result:
@@ -49,7 +58,10 @@ Here is the result:
 A glossary term:: The corresponding definition.
 
 A second glossary term::
-  The corresponding definition 2.
+  A complex definition, with a bundled list:
+  * Item 1
+  .. Sub-Item 1
+  .. Sub-Item 2
 
 ## FAQ
 
@@ -59,7 +71,10 @@ A second glossary term::
 A question?:: The corresponding answer.
 
 A second question?::
-  The corresponding (indented) answer.
+  A complex answer, with a bundled list:
+  * Item 1
+  .. Sub-Item 1
+  .. Sub-Item 2
 ----
 
 Here is the result:
@@ -68,7 +83,10 @@ Here is the result:
 A question?:: The corresponding answer.
 
 A second question?::
-  The corresponding answer 2.
+  A complex answer, with a bundled list:
+  * Item 1
+  .. Sub-Item 1
+  .. Sub-Item 2
 
 ## Rendering customization
 
