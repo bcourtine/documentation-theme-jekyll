@@ -1,0 +1,76 @@
+# Asciidoc Glossary and FAQ
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-07
+:Revision: 1.0
+:page-tags: [asciidoc,formatting,special_layouts]
+:page-keywords: definitions, glossaries, terms, style guide
+:page-summary: "Asciidoc have a native glossary function."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_glossary_faq.html
+
+## Introduction
+
+Asciidoc has special blocks to generate glossaries and FAQs.
+
+## Glossary
+
+[source]
+----
+[glossary]
+A glossary term:: The corresponding definition.
+
+A second glossary term::
+  The corresponding (indented) definition.
+----
+
+Here is the result:
+
+[glossary]
+A glossary term:: The corresponding definition.
+
+A second glossary term::
+  The corresponding definition 2.
+
+## Horizontal Glossary
+
+[source]
+----
+[horizontal]
+A glossary term:: The corresponding definition.
+
+A second glossary term::
+  The corresponding definition 2.
+----
+
+Here is the result:
+
+[horizontal]
+A glossary term:: The corresponding definition.
+
+A second glossary term::
+  The corresponding definition 2.
+
+## FAQ
+
+[source]
+----
+[qanda]
+A question?:: The corresponding answer.
+
+A second question?::
+  The corresponding (indented) answer.
+----
+
+Here is the result:
+
+[qanda]
+A question?:: The corresponding answer.
+
+A second question?::
+  The corresponding answer 2.
+
+## Rendering customization
+
+IMPORTANT: Glossary and FAQ rendering style can be updated, editing the `_templates/block_dlist.html.erb` template file.
+FAQ template has been updated to have the same rendering as the link:mydoc_faq_layout.html[theme FAQ].

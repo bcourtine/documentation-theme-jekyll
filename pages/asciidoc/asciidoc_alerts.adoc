@@ -81,6 +81,10 @@ CAUTION: This is my caution. All the content I type here is treated as a single 
 
 TIP: This is my tip. All the content I type here is treated as a single paragraph.
 
+### Alert rendering customization
+
+IMPORTANT: Alert rendering style can be updated, editing the `_templates/block_admonition.html.erb` template file.
+Alert rendering has been updated to have the same rendering as the link:mydoc_alerts.html[theme native alerts].
 
 ## Callouts
 
