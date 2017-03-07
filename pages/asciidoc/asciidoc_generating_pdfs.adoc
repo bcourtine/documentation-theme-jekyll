@@ -1,0 +1,68 @@
+# Asciidoc Generating PDFs
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-07
+:Revision: 1.0
+:page-tags: [asciidoc,publishing,content_types]
+:page-keywords: PDF, Asciidoctor PDF, Prince XML
+:page-summary: "You can generate a PDF from your Asciidoc files."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_generating_pdfs.html
+
+## PDF overview
+
+The process for creating a single PDF for the documentation relies on Prince XML to transform the HTML content into PDF.
+It is explained on the link:mydoc_generating_pdfs.html[Generating PDFs page].
+
+## Asciidoctor PDF
+
+https://github.com/asciidoctor/asciidoctor-pdf[Asciidoctor PDF] can convert individual Asciidoc documents into PDF
+files. It is a free standalone Ruby tool.
+
+.Basic usage
+[source, bash]
+----
+asciidoctor-pdf pages/asciidoc/asciidoc_generating_pdfs.adoc
+----
+
+## Limitations
+
+### Unsupported rendering features
+
+The Asciidoctor PDF tool is completely distinct from Jekyll, and can be used standalone on any Asciidoc file. So
+Jekyll code is ignored.
+
+* Liquid filters or variables will not be processed, and rendered "as is".
+* HTML code in passthru blocks will be ignored, and not rendered.
+
+WARNING: If you want to generate PDFs from Asciidoc documents using Asciidoctor PDF, you must avoid passthru blocks
+and Liquid expressions.
+
+### Asciidoc parameters
+
+Jekyll Asciidoc global configuration (in `_config.yml`) will not be used by Asciidoc PDF (usage of font icons, usage
+of experimental features, etc.).
+
+This problem can be solved adding theses parameters during the invocation of the tool:
+
+.Usage with Asciidoc rendering parameters
+[source, bash]
+----
+asciidoctor-pdf -a experimental -a icons=font -a source-highlighter=rouge pages/asciidoc/asciidoc_generating_pdfs.adoc
+----
+
+It can also be solved duplicating theses parameters in each document:
+
+[source, bash]
+----
+= Title
+:experimental:
+:icons: font
+:source-highlighter: rouge
+----
+
+### PDF theme
+
+The PDF theme does not inherit from Jekyll theme customizations (Bootstrap alerts style, for example). Default PDF
+rendering theme can be modified/extended following the official
+https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc[theming guide].

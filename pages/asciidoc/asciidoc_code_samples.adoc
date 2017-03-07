@@ -1,4 +1,4 @@
-# Asciidoc code samples
+# Asciidoc Code samples
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-03-06
