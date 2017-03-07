@@ -19,6 +19,14 @@ entries:
       url: /asciidoc_introduction.html
       output: web, pdf
 
+  - title: Installation
+    output: web, pdf
+    folderitems:
+
+    - title: Asciidoc Ruby gems
+      url: /asciidoc_ruby_gems.html
+      output: web, pdf
+
   - title: Formatting
     output: web, pdf
     folderitems:

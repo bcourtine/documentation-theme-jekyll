@@ -1,0 +1,50 @@
+# Asciidoc Ruby gems
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-06
+:Revision: 1.0
+:page-tags: [asciidoc, getting_started, troubleshooting]
+:page-keywords: code samples syntax highlighting
+:page-summary: "Ruby has various gems (or plugins) that provide various functionality. Each Jekyll project usually requires certain gems."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_ruby_gems.html
+
+## About Ruby and gems
+
+See link:mydoc_about_ruby_gems_etc.html[About Ruby, Gems, Bundler, and other prerequisites] page for a generic
+introduction about https://www.ruby-lang.org/[Ruby] and gems.
+
+## Asciidoctor gems
+
+Asciidoctor gems are defined in the `Gemfile` file.
+
+### Base gems
+
+[horizontal]
+
+asciidoctor:: Asciidoctor gem, used for the Asciidoc rendering.
+
+jekyll-asciidoc:: Jekyll Asciidoc plugin, used for Asciidoc integration in a Jekyll site (variable injection, etc.).
+
+### Additional gems
+
+[horizontal]
+
+pygments.rb::
+  Source code highlighting. If you don't need this feature, you can:
+  * Remove this gem.
+  * Remove the `css/asciidoc-pygment.css` file.
+  * Remove the CSS include in `_includes/head.html`.
+  * Remove the highlight configuration in the Asciidoctor part of the `_config.yml` file (`source-highlighter` and
+      `pygments-stylesheet`).
+
+slim and thread_safe::
+  Required gems to compile Asciidoc templates (located in the `_templates` folder), to override default HTML rendering
+  and have a look & feel integrated with the Jekyll theme (alerts, FAQ, etc.). If you want to roll back to default
+  rendering, you can:
+  * Remove theses gems.
+  * Remove the `_templates` folder.
+  * Remove the `template_dir` attribute in the Asciidoctor part of the `_config.yml` file.
+
+asciidoctor-pdf::
+  PDF generation from Asciidoc files. If you don't need this feature, you can remove this gem.
