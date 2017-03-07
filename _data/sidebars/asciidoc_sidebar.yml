@@ -27,6 +27,14 @@ entries:
       url: /asciidoc_ruby_gems.html
       output: web, pdf
 
+  - title: Authoring
+    output: web, pdf
+    folderitems:
+
+    - title: Asciidoc Pages
+      url: /asciidoc_pages.html
+      output: web, pdf
+
   - title: Formatting
     output: web, pdf
     folderitems:

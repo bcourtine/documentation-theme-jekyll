@@ -1,7 +1,7 @@
 # Asciidoc Ruby gems
 :Author: Benoît Courtine
 :Email: contact@courtine.org
-:Date: 2017-03-06
+:Date: 2017-03-07
 :Revision: 1.0
 :page-tags: [asciidoc, getting_started, troubleshooting]
 :page-keywords: code samples syntax highlighting
