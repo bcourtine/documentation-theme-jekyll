@@ -35,6 +35,10 @@ entries:
       url: /asciidoc_pages.html
       output: web, pdf
 
+    - title: Asciidoc Posts
+      url: /asciidoc_posts.html
+      output: web, pdf
+
   - title: Formatting
     output: web, pdf
     folderitems:

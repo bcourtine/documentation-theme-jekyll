@@ -49,8 +49,8 @@ Make sure each page has frontmatter at the top like this:
 
 Your frontmatter must have a `title` and `page-permalink` value. All the other values are optional.
 
-IMPORTANT: `Author`, `Email`, `Date`, and `Revision` are Asciidoc variables. *Jekyll variables in Asciidoc frontmatter
-must be prefixed with `page-` to be processed correctly. For more information, see
+IMPORTANT: `Author`, `Email`, `Date`, and `Revision` are standard (but optional) Asciidoc variables. Jekyll variables
+in Asciidoc frontmatter must be prefixed with `page-` to be processed correctly. For more information, see
 https://github.com/asciidoctor/jekyll-asciidoc#page-attributes[Jekyll Asciidoc plugin page attributes section].
 
 Frontmatter properties are explained here: link:mydoc_pages.html[Pages].

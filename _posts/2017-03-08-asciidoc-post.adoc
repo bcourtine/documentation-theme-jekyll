@@ -1,0 +1,16 @@
+= Asciidoc post
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-08
+:Revision: 1.0
+:page-keyworkds: jekyll update
+:page-tags: [asciidoc, news]
+:page-summary: "Asciidoc annoucement."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: 2017-03-08-asciidoc-post.html
+
+== It works!
+
+It is just a demo post illustrating that Jekyll posts can be written with asciidoc files.
+
+TIP: Formatting syntaxes (alerts, code samples, etc.) works here too!

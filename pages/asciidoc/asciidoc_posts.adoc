@@ -1,0 +1,54 @@
+= Asciidoc posts
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-08
+:Revision: 1.0
+:page-keywords: posts, blog, news, authoring, frontmatter
+:page-tags: [asciidoc, getting_started, formatting, content_types]
+:page-summary: "You can use posts when you want to create blogs or news type of content."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_posts.html
+
+## About posts
+
+Posts are typically used for blogs or other news information because they contain a date and are sorted in reverse
+chronological order.
+
+You create an Asciidoc post by adding a file in the `_posts` folder that is named yyyy-mm-dddd-permalink.adoc. You can
+use any number of subfolders here that you want.
+
+CAUTION: Naming convention must be `yyyy-mm-dddd-permalink.adoc` for link:news.html[News page] rendering. If the post
+date is future, it will not be rendered.
+
+Posts use the `post.html` layout in the `_layouts` folder when you are viewing the post.
+
+The `news.html` file in the root directory shows a reverse chronological listing of the 10 latest posts
+
+TIP: Asciidoc and Markdown posts can coexist in the `_posts` folder. See the
+link:2017-03-08-asciidoc-post.html[Asciidoc post] example.
+
+## Allowed frontmatter
+
+The frontmatter you can use with posts is as follows:
+
+[source]
+----
+= Title
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-08
+:Revision: 1.0
+:page-keywords: jekyll update
+:page-tags: [asciidoc, news]
+:page-summary: "Asciidoc annoucement."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: 2017-03-08-asciidoc-post.html
+----
+
+IMPORTANT: `Author`, `Email`, `Date` and `Revision` are standard (but optional) Asciidoc frontmatter information.
+They are propagated to Jekyll by the Jekyll Asciidoc plugin, and rendered in the resulting post header.
+Jekyll variables in Asciidoc frontmatter must be prefixed with `page-` to be processed correctly.
+
+Post frontmatter properties are explained here: link:mydoc_posts.html[Posts].
+
+NOTE: Asciidoc formatting syntaxes (alerts, code samples, etc.) work in posts.
