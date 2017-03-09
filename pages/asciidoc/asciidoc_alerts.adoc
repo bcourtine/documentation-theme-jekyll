@@ -65,27 +65,27 @@ There are five types of alerts you can leverage:
 
 * NOTE
 * TIP
+* CAUTION (using the WARNING style, since Bootstrap provides only 4 different alert styles)
 * WARNING
 * IMPORTANT
-* CAUTION (using the WARNING style, since Bootstrap provides only 4 different alert styles)
 
 Here is the result for each type:
 
 NOTE: This is my note. All the content I type here is treated as a single paragraph.
 
-IMPORTANT: This is my important message. All the content I type here is treated as a single paragraph.
-
-WARNING: This is my warning. All the content I type here is treated as a single paragraph.
+TIP: This is my tip. All the content I type here is treated as a single paragraph.
 
 CAUTION: This is my caution. All the content I type here is treated as a single paragraph.
 
-TIP: This is my tip. All the content I type here is treated as a single paragraph.
+WARNING: This is my warning. All the content I type here is treated as a single paragraph.
+
+IMPORTANT: This is my important message. All the content I type here is treated as a single paragraph.
 
 ## Callouts
 
 ### Usage
 
-IMPORTANT: Bootstrap has 6 callout types, but since Asciidoc has only 5 alert blocks, the `primary` Bootstrap callout
+CAUTION: Bootstrap has 6 callout types, but since Asciidoc has only 5 alert blocks, the `primary` Bootstrap callout
 cannot be generated using Asciidoc syntax. The excluded callout can be changed editing the
 `templates/block_admonition.html.erb` file.
 
@@ -104,7 +104,7 @@ Here's the result:
 A note using the Bootstrap callout style.
 ====
 
-IMPORTANT: With an additional style to the admonition block (here `callout`), the single line syntax is not supported.
+CAUTION: With an additional style to the admonition block (here `callout`), the single line syntax is not supported.
 
 As for alerts, callout blocks can contain complex formatting: lists, tables, code samples, etc.
 
@@ -140,9 +140,9 @@ The available callout types are :
 
 * `NOTE.callout`: Bootstrap `info` callout (light blue)
 * `TIP.callout`: Bootstrap `success` callout (green)
-* `IMPORTANT.callout`: Bootstrap `warning` callout (yellow)
-* `WARNING.callout`: Bootstrap `danger` callout (red)
 * `CAUTION.callout`: Bootstrap `default` callout (grey)
+* `WARNING.callout`: Bootstrap `warning` callout (yellow)
+* `IMPORTANT.callout`: Bootstrap `danger` callout (red)
 * Bootstrap `primary` callout (dark blue) cannot be rendered
 
 Here's the result for each type:
@@ -157,9 +157,9 @@ Note callout
 Tip callout
 ====
 
-[IMPORTANT.callout]
+[CAUTION.callout]
 ====
-Important callout.
+Caution callout.
 ====
 
 [WARNING.callout]
@@ -167,9 +167,9 @@ Important callout.
 Warning callout.
 ====
 
-[CAUTION.callout]
+[IMPORTANT.callout]
 ====
-Caution callout.
+Important callout.
 ====
 
 ## Alert and callout rendering
@@ -182,7 +182,7 @@ PDF backend.
 
 ## Use Liquid variables inside parameters with includes
 
-[WARNING]
+[IMPORTANT]
 ====
 * In order to use liquid variables and filters, the page header must contain the `page-liquid` attribute.
 * Liquid variables and filters are not processed when
