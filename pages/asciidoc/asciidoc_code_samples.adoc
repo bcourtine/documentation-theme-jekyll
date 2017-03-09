@@ -77,16 +77,26 @@ console.log('world'); // <2>
 <1> First line comment
 <2> Third line comment
 
+## Include source code from external file
+
+[source]
+----
+ [source, ruby, numbered]
+ ----
+ include::data/test.rb[]
+ ----
+----
+
+Here is the result:
+
+[source, ruby, numbered]
+----
+include::data/test.rb[]
+----
+
 ## TODO
 
 Some Asciidoc styles conflict with theme native styles:
 
 * Numbered source code table (`backgroup-color` and `border-top`).
 * Code comment boxes vertical alignment.
-
-IMPORTANT: Theses conflicts should be identified and resolved.
-
-Markdown uses `Rouge` code highlighter, with the `syntax.css` CSS file. Asciidoc uses `Pygments` code highlighter,
-with the `asciidoc-pygments.css` CSS file.
-
-IMPORTANT: Code highlighters and highlight CSS files should be unified.
