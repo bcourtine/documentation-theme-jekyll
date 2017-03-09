@@ -1,0 +1,126 @@
+# Asciidoc Tables
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-09
+:Revision: 1.0
+:page-tags: [asciidoc, formatting]
+:page-keywords: datatables, tables, grids
+:page-summary: "Table formatting with Asciidoc syntax."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_tables.html
+
+## Basic Tables
+
+Here is the syntax for a basic table:
+
+[source]
+----
+|===
+|Row1 - Col1 |Row1 - Col2 |Row1 - Col3
+|Row2 - Col1 |Row2 - Col2 |Row2 - Col3
+|===
+----
+
+Here is the result:
+
+|===
+|Row1 - Col1 |Row1 - Col2 |Row1 - Col3
+|Row2 - Col1 |Row2 - Col2 |Row2 - Col3
+|===
+
+## Table parameters
+
+Table parameters can be specified in the header block:
+
+* Table header and footer
+* Column widths
+* Text alignment
+* Cell fusion
+* Etc.
+
+TIP: Since there are a lot of options, we will only put somes examples here. For more complex options,
+see the http://www.methods.co.nz/asciidoc/newtables.html[official documentation].
+
+.Table with header
+[source]
+----
+[cols="2*,^3" options="header"]
+|===
+|Header 1 |Header 2 |Header 3
+|Normal cell |Normal cell |Triple width, centered cell
+|Normal cell |Normal cell |Triple width, centered cell
+|===
+----
+
+Here is the result:
+
+[cols="2*,^3" options="header"]
+|===
+|Header 1 |Header 2 |Header 3
+|Normal cell |Normal cell |Triple width, centered cell
+|Normal cell |Normal cell |Triple width, centered cell
+|===
+
+.Header, footer, and first column header
+[source]
+----
+[cols="h,1,^2" options="header"]
+|===
+|Header 1 |Header 2 |Header 3
+|Header col |Normal cell |Double width, centered cell
+|Header col |Normal cell |Double width, centered cell
+|===
+----
+
+Here is the result:
+
+[cols="h,1,^2" options="header"]
+|===
+|Header 1 |Header 2 |Header 3
+|Header col |Normal cell |Double width, centered cell
+|Header col |Normal cell |Double width, centered cell
+|===
+
+## Include table data from external file
+
+Table data can be provided with different formats.
+
+[source]
+----
+[format="csv",cols="3*" options="header"]
+|===
+H1,H2,H3
+1,2,3
+4,5,6
+|===
+----
+
+Here is the result:
+
+[format="csv",cols="3*" options="header"]
+|===
+H1,H2,H3
+1,2,3
+4,5,6
+|===
+
+Table data can be included from an external file:
+
+.Partial inclusion (header is not in the external file).
+[source]
+----
+ [format="csv",cols="5*" options="header"]
+ |===
+ H1,H2,H3,H4,H5
+ include::data/test.csv[]
+ |===
+----
+
+Here is the result:
+
+[format="csv",cols="5*" options="header,footer"]
+|===
+H1,H2,H3,H4,H5
+include::data/test.csv[]
+F1,F2,F3,F4,F5
+|===

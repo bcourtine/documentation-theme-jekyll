@@ -109,11 +109,11 @@ url: http://idratherbewriting.com
 # Asciidoc config
 asciidoctor:
   template_dir: _templates
+  base_dir: :docdir
   attributes:
     source-highlighter: pygments
     pygments-stylesheet: !
     icons: font
     imagesdir: images
     stylesdir: css
-    base_dir: :docdir
     experimental: 'true'

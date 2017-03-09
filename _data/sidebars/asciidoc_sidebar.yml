@@ -55,6 +55,10 @@ entries:
       url: /asciidoc_code_samples.html
       output: web, pdf
 
+    - title: Asciidoc Tables
+      url: /asciidoc_tables.html
+      output: web, pdf
+
   - title: Publishing
     output: web, pdf
     folderitems:
