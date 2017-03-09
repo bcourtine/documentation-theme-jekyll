@@ -81,83 +81,123 @@ CAUTION: This is my caution. All the content I type here is treated as a single 
 
 TIP: This is my tip. All the content I type here is treated as a single paragraph.
 
-### Alert rendering customization
-
-IMPORTANT: Alert rendering style can be updated, editing the `_templates/block_admonition.html.erb` template file.
-Alert rendering has been updated to have the same rendering as the link:mydoc_alerts.html[theme native alerts].
-
 ## Callouts
 
 ### Usage
 
-link:mydoc_alerts.html[Theme native callouts] are not supported yet using Asciidoc syntax. They can be emulated
-using HTML in a "passthrough" block:
+IMPORTANT: Bootstrap has 6 callout types, but since Asciidoc has only 5 alert blocks, the `primary` Bootstrap callout
+cannot be generated using Asciidoc syntax. The excluded callout can be changed editing the
+`templates/block_admonition.html.erb` file.
 
 [source]
 ----
-++++
-<div class="bs-callout bs-callout-primary">Callout</div>
-++++
+[NOTE.callout]
+====
+A note using the Bootstrap callout style.
+====
 ----
 
 Here's the result:
 
-++++
-<div class="bs-callout bs-callout-primary">Callout</div>
-++++
+[NOTE.callout]
+====
+A note using the Bootstrap callout style.
+====
 
-An alternative way is to enable the `page-liquid` attribute in the header, and to use the `include` macro in a
-passthrough block:
+IMPORTANT: With an additional style to the admonition block (here `callout`), the single line syntax is not supported.
 
-[source]
+As for alerts, callout blocks can contain complex formatting: lists, tables, code samples, etc.
+
 ----
-++++
-{% raw %}{% include callout.html content="This is my callout. It has a border on the left whose color you define by passing a type parameter. I typically use this style of callout when I have more information that I want to share, often spanning multiple paragraphs. " type="primary" %} {% endraw %}
-++++
+[TIP.callout]
+====
+A tip with nested lists:
+
+* Item 1
+.. Sub-item 1
+.. Sub-item 2
+* Item 2
+====
 ----
 
-Here's the result:
+Here is the result:
 
-++++
-{% include callout.html content="This is my callout. It has a border on the left whose color you define by passing a
-type parameter. I typically use this style of callout when I have more information that I want to share, often spanning
-multiple paragraphs." type="primary" %}
-++++
+[TIP.callout]
+====
+A tip with *nested lists*:
 
-IMPORTANT: It's just a stylistic preference whether to use an alert or callout. *But since alerts are native in Asciidoc,
-I recommand using alerts.*
+* Item 1
+.. Sub-item 1
+.. Sub-item 2
+* Item 2
+====
+
+NOTE: It's just a stylistic preference whether to use an alert or callout.
 
 ### Callout types
 
 The available callout types are :
 
-* `danger` (red)
-* `default` (grey)
-* `primary` (dark blue)
-* `success` (green)
-* `info` (light blue)
-* `warning` (yellow)
+* `NOTE.callout`: Bootstrap `info` callout (light blue)
+* `TIP.callout`: Bootstrap `success` callout (green)
+* `IMPORTANT.callout`: Bootstrap `warning` callout (yellow)
+* `WARNING.callout`: Bootstrap `danger` callout (red)
+* `CAUTION.callout`: Bootstrap `default` callout (grey)
+* Bootstrap `primary` callout (dark blue) cannot be rendered
 
 Here's the result for each type:
 
-++++
-<div class="bs-callout bs-callout-danger">Danger callout</div>
-<div class="bs-callout bs-callout-default">Default callout</div>
-<div class="bs-callout bs-callout-primary">Primary callout</div>
-<div class="bs-callout bs-callout-success">Success callout</div>
-<div class="bs-callout bs-callout-info">Info callout</div>
-<div class="bs-callout bs-callout-warning">Warning callout</div>
-++++
+[NOTE.callout]
+====
+Note callout
+====
+
+[TIP.callout]
+====
+Tip callout
+====
+
+[IMPORTANT.callout]
+====
+Important callout.
+====
+
+[WARNING.callout]
+====
+Warning callout.
+====
+
+[CAUTION.callout]
+====
+Caution callout.
+====
+
+## Alert and callout rendering
+
+Alert and callout rendering style can be updated, editing the `_templates/block_admonition.html.erb` template file.
+
+NOTE: When link:asciidoc_generating_pdfs.html[generating a PDF with Asciidoctor PDF], alerts and callouts with have
+the same rendering (default Asciidoc admonition rendering), since theme specific HTML templates are ignored by the
+PDF backend.
 
 ## Use Liquid variables inside parameters with includes
 
-IMPORTANT: In order to use liquid variables and filters, the page header must contain the `page-liquid` attribute.
+[WARNING]
+====
+* In order to use liquid variables and filters, the page header must contain the `page-liquid` attribute.
+* Liquid variables and filters are not processed when
+link:asciidoc_generating_pdfs.html[generating a PDF with Asciidoctor PDF]. If you whant to use the Asciidoctor PDF
+feature, usage of Liquid variables is not recommanded.
+====
 
+'''
+
+.Liquid variable usage example
 [source]
 ----
-{% raw %}WARNING: The "{{ site.company_name }}" is pleased to announce an upcoming release.{% endraw %}
+{% raw %}NOTE: The "{{ site.company_name }}" is pleased to announce an upcoming release.{% endraw %}
 ----
 
 Here is the result:
 
-WARNING: The "{{ site.company_name }}" is pleased to announce an upcoming release.
+NOTE: The "{{ site.company_name }}" is pleased to announce an upcoming release.

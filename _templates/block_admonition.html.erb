@@ -1,16 +1,23 @@
 <%#encoding:UTF-8%><div<%= @id && %( id="#{@id}") %> class="<%= ['admonitionblock',(attr :name),role].compact * ' ' %>">
-<% if attr? :name, 'note' %>
-<div class="alert alert-info" title="<%= @caption %>"><i class="fa fa-info-circle"></i> <b>Note:</b> <%= content %></div>
-<% elsif attr? :name, 'tip' %>
-<div class="alert alert-success" title="<%= @caption %>"><i class="fa fa-check-square-o"></i> <b>Tip:</b> <%= content %></div>
 
-<% elsif attr? :name, 'warning' %>
-<div class="alert alert-danger" title="<%= @caption %>"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> <%= content %></div>
-<% elsif attr? :name, 'caution' %>
-<div class="alert alert-danger" title="<%= @caption %>"><i class="fa fa-exclamation-circle"></i> <b>Caution:</b> <%= content %></div>
-<% elsif attr? :name, 'important' %>
-<div class="alert alert-warning" title="<%= @caption %>"><i class="fa fa-warning"></i> <b>Important:</b> <%= content %></div>
+<%
+adMap = {
+  "note" => { "alertClass" => "info", "calloutClass" => "info", "icon" => "info-circle", "text" => "Note:" },
+  "tip" => { "alertClass" => "success", "calloutClass" => "success", "icon" => "check-square-o", "text" => "Tip:" },
+  "important" => { "alertClass" => "warning", "calloutClass" => "warning", "icon" => "warning", "text" => "Important:" },
+  "warning" => { "alertClass" => "danger", "calloutClass" => "danger", "icon" => "exclamation-circle", "text" => "Warning:" },
+  "caution" => { "alertClass" => "danger", "calloutClass" => "default", "icon" => "exclamation-circle", "text" => "Caution:" },
+}
+adMap.default = { "alertClass" => "info", "calloutClass" => "info", "icon" => "info-circle", "text" => "Default:" }
+
+params = params = adMap[attr :name]
+
+if role? 'callout'
+%>
+<div class="bs-callout bs-callout-<%= params["calloutClass"] %>" title="<%= @caption %>"><%= content %></div>
 <% else %>
-<%= content %>
+<div class="alert alert-<%= params["alertClass"] %>" title="<%= @caption %>">
+  <i class="fa fa-<%= params["icon"] %>"></i> <b><%= params["text"] %></b> <%= content %>
+</div>
 <% end %>
 </div>
