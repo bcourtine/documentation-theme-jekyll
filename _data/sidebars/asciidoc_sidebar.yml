@@ -39,6 +39,10 @@ entries:
       url: /asciidoc_posts.html
       output: web, pdf
 
+    - title: Asciidoc Content reuse
+      url: /asciidoc_content_reuse.html
+      output: web, pdf
+
   - title: Formatting
     output: web, pdf
     folderitems:

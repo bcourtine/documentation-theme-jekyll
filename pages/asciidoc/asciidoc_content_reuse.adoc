@@ -1,0 +1,38 @@
+# Asciidoc Content reuse
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-09
+:Revision: 1.0
+:page-tags: [asciidoc, single_sourcing]
+:page-keywords: includes, inclusion, reference
+:page-summary: "You can reuse chunks of content by including document parts."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_content_reuse.html
+
+## About content reuse
+
+You can embed content from one file inside another using includes.
+
+[source]
+----
+ include::data/test.adoc[]
+----
+
+Here is the result:
+
+include::data/test.adoc[]
+
+'''
+
+IMPORTANT: Include path is *relative to the document that performs the include*. This configuration
+allows inclusion to work both in HTML and PDF generation with Asciidoc PDF. If you prefer a path relative
+to Jekyll site root, you can remove the `base_dir: :docdir` line from `_config.yml`.
+
+## Classic include usages
+
+Includes are usually used for:
+
+* Including a source code from an external file. See link:asciidoc_code_samples.html[Asciidoc Code samples]
+for an example.
+* Included a big table content from an external file (CSV). See link:asciidoc_tables.html[Asciidoc Tables]
+for an example.
