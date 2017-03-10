@@ -19,6 +19,10 @@ entries:
       url: /asciidoc_introduction.html
       output: web, pdf
 
+    - title: Asciidoc About
+      url: /asciidoc_about.html
+      output: web, pdf
+
   - title: Installation
     output: web, pdf
     folderitems:

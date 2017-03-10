@@ -1,0 +1,22 @@
+# Asciidoc About
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-10
+:Revision: 1.0
+:page-tags: [asciidoc, getting_started]
+:page-keywords: documentation theme
+:page-summary: "About the asciidoc extension author for this documentation theme."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_about.html
+
+Theme author is link:mydoc_about.md[Tom Johnson], technical writer, blogger, and podcaster based in San Jose, California.
+
+The Asciidoc extension and for this theme is developped by Benoît Courtine, a french software engineer and
+https://blog.courtine.org/[blogger].
+
+I have used this theme for professional documentation projects. But I prefer using Asciidoc for writting technical
+documents. So I adapted the Jekyll theme to support Asciidoc, and Asciidoc templates to get a rendering similar
+to original theme (alerts, FAQ, code highlighting, etc.).
+
+These Asciidoc developments are fairly stable, and since I used this theme for free, I am also releasing the Asciidoc
+extensions for free.
