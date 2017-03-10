@@ -47,6 +47,10 @@ entries:
       url: /asciidoc_content_reuse.html
       output: web, pdf
 
+    - title: Asciidoc Editors
+      url: /asciidoc_editors.html
+      output: web, pdf
+
   - title: Formatting
     output: web, pdf
     folderitems:

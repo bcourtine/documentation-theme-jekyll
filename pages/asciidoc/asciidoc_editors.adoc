@@ -1,0 +1,46 @@
+# Asciidoc Editors
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-03-10
+:Revision: 1.0
+:page-tags: [asciidoc, getting_started]
+:page-keywords: text editor, atom, sublime text
+:page-summary: "This page provides some tips for using text editors for writting Asciidoc."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_editors.html
+
+## Asciidoc
+
+Like http://daringfireball.net/projects/markdown/[Markdown], http://www.methods.co.nz/asciidoc/[Asciidoc] is a markup
+language. It can be written with any text editor, but some are better.
+
+## Atom
+
+First, you can read this link:mydoc_atom_text_editor[Atom page] as an introduction.
+
+For Asciidoc authoring, you can install theses plugins:
+
+* https://atom.io/packages/language-asciidoc[Language Asciidoc].
+* https://atom.io/packages/asciidoc-preview[Asciidoc Preview].
+
+With theses two plugins, editing Asciidoc page is really pleasant: the best editor choice, IMHO.
+
+## Sublime Text
+
+https://www.sublimetext.com/[Sublime Text] is another great text editor, but it is not free.
+
+It also has good plugins for Asciidoc support:
+
+* https://packagecontrol.io/packages/AsciiDoc[Asciidoc language support]
+* https://packagecontrol.io/packages/OmniMarkupPreviewer[OmniMarkupPreviewer] for previewing documents.
+
+## WebStorm
+
+link:mydoc_webstorm_text_editor[WebStorm] is one of the best web editors. It has plugins for Asciidoc support
+and document preview. It is a great editor, but much more heavy than Atom or Sublime Text. Since Asciidoc is
+a markup language, WebStorm is too heavy IMHO.
+
+## Other editors (not tested)
+
+* https://code.visualstudio.com/[Visual Studio Code]
+* https://notepad-plus-plus.org/[Notepadd++] (Windows only)
