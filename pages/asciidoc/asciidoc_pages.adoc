@@ -1,4 +1,4 @@
-# Asciidoc Pages
+= Asciidoc Pages
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-03-07
@@ -10,13 +10,13 @@
 :page-permalink: asciidoc_pages.html
 :toc: macro
 
-## Where to author content
+== Where to author content
 Use a text editor such as Sublime Text, WebStorm, IntelliJ, or Atom to create pages. Atom is recommended because it's
 created by Github, which is driving some of the Jekyll development through Github Pages.
 
 TIP: IMHO, Atom have the best Asciidoc support (using plugins).
 
-## Where to save pages
+== Where to save pages
 
 You can store your pages in any folder structures you want, with any level of folder nesting. The site output will pull
 all of those pages out of their folders and put them into the root directory. Check out the \_site folder, which is
@@ -27,7 +27,7 @@ NOTE: The theme suggestion is to place all pages in a directory structure under 
 The listing of all pages in the root directory (which happens when you add a permalink property to the pages) is what
 allows the relative linking and offline viewing of the site to work.
 
-## Frontmatter
+== Frontmatter
 
 Make sure each page has frontmatter at the top like this:
 
@@ -55,7 +55,7 @@ https://github.com/asciidoctor/jekyll-asciidoc#page-attributes[Jekyll Asciidoc p
 
 Frontmatter properties are explained here: link:mydoc_pages.html[Pages].
 
-## Automatic mini-TOCs
+== Automatic mini-TOCs
 
 By default, Asciidoc generates a TOC at the top of your pages and posts. This feature is disabled in `_config.yml`,
 because Asciidoc TOC conflicts with theme TOC.
@@ -73,21 +73,21 @@ using the `toc::[]` macro.
 .Toc inserted here by the macro
 toc::[]
 
-## Headings
+== Headings
 
 Use pound signs before the heading title to designate the level. Note that kramdown requires headings to have one space
 before and after the heading. Without this space above and below, the heading won't render into HTML.
 
 [source]
 ----
-## Second-level heading
+== Second-level heading
 
-### Third-level heading
+=== Third-level heading
 
-#### Fourth-level heading
+==== Fourth-level heading
 ----
 
-## Specify a particular page layout
+== Specify a particular page layout
 
 The configuration file sets the default layout for pages as the "page" layout.
 
@@ -95,7 +95,7 @@ You can create other layouts inside the `layouts` folder. If you create a new la
 your page use your new layout by adding `:page-layout: mylayout.html` in the page's frontmatter. Whatever layout you
 specify in the frontmatter of a page will override the layout default set in the configuration file.
 
-## Comments
+== Comments
 
 Disqus, a commenting system, is integrated into the theme. In the configuration file, specify the Disqus code for
 the universal code, and Disqus will appear. If you don't add a Disqus value, the Disqus form isn't included.

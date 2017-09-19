@@ -1,4 +1,4 @@
-# Asciidoc Tables
+= Asciidoc Tables
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-03-09
@@ -9,7 +9,7 @@
 :page-sidebar: asciidoc_sidebar
 :page-permalink: asciidoc_tables.html
 
-## Basic Tables
+== Basic Tables
 
 Here is the syntax for a basic table:
 
@@ -28,7 +28,7 @@ Here is the result:
 |Row2 - Col1 |Row2 - Col2 |Row2 - Col3
 |===
 
-## Table parameters
+== Table parameters
 
 Table parameters can be specified in the header block:
 
@@ -81,7 +81,7 @@ Here is the result:
 |Header col |Normal cell |Double width, centered cell
 |===
 
-## Include table data from external file
+== Include table data from external file
 
 Table data can be provided with different formats.
 

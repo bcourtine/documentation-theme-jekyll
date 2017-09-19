@@ -1,4 +1,4 @@
-# Asciidoc Content reuse
+= Asciidoc Content reuse
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-03-09
@@ -9,7 +9,7 @@
 :page-sidebar: asciidoc_sidebar
 :page-permalink: asciidoc_content_reuse.html
 
-## About content reuse
+== About content reuse
 
 You can embed content from one file inside another using includes.
 
@@ -28,7 +28,7 @@ IMPORTANT: Include path is *relative to the document that performs the include*.
 allows inclusion to work both in HTML and PDF generation with Asciidoc PDF. If you prefer a path relative
 to Jekyll site root, you can remove the `base_dir: :docdir` line from `_config.yml`.
 
-## Classic include usages
+== Classic include usages
 
 Includes are usually used for:
 

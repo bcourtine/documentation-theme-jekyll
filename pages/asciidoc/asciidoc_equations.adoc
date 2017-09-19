@@ -1,4 +1,4 @@
-# Asciidoc Equations
+= Asciidoc Equations
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-09-19
@@ -10,7 +10,7 @@
 :page-permalink: asciidoc_equations.html
 :stem:
 
-## Stem support and syntax
+== Stem support and syntax
 
 See http://asciidoctor.org/docs/user-manual/#activating-stem-support[Asciidoctor official documentation].
 
@@ -37,7 +37,7 @@ Water (stem:[H_2O]) is a critical component.
 
 latexmath:[C = \alpha + \beta Y^{\gamma} + \epsilon]
 
-## Enabling HTML rendering
+== Enabling HTML rendering
 
 To enable HTML rendering of equations, MathJax JS have to be included. It can be achieved adding scripts in
 `_includes/head.html`:
@@ -65,7 +65,7 @@ MathJax.Hub.Config({
 
 TIP: If only a few pages require equation rendering, this code can be included page by page using a `passthru` block.
 
-## Enabling PDF rendering
+== Enabling PDF rendering
 
 PDF can render stem equations using https://github.com/asciidoctor/asciidoctor-mathematical/[asciidoctor-mathematical] extension:
 

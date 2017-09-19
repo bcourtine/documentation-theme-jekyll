@@ -1,4 +1,4 @@
-# Asciidoc Code samples
+= Asciidoc Code samples
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-03-06
@@ -9,7 +9,7 @@
 :page-sidebar: asciidoc_sidebar
 :page-permalink: asciidoc_code_samples.html
 
-## Code Samples
+== Code Samples
 
 Use source blocks with the language specified, like this:
 
@@ -31,7 +31,7 @@ console.log('hello');
 For the list of supported languages you can use (similar to `js` for JavaScript), see
 https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers[Supported languages].
 
-## Source line numbers
+== Source line numbers
 
 [source]
 ----
@@ -52,7 +52,7 @@ console.log(' ');
 console.log('world');
 ----
 
-## Source comments
+== Source comments
 
 [source]
 ----
@@ -77,7 +77,7 @@ console.log('world'); // <2>
 <1> First line comment
 <2> Third line comment
 
-## Include source code from external file
+== Include source code from external file
 
 [source]
 ----
@@ -94,7 +94,7 @@ Here is the result:
 include::data/test.rb[]
 ----
 
-## TODO
+== TODO
 
 Some Asciidoc styles conflict with theme native styles:
 

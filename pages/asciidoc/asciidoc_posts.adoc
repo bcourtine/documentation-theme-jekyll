@@ -9,7 +9,7 @@
 :page-sidebar: asciidoc_sidebar
 :page-permalink: asciidoc_posts.html
 
-## About posts
+== About posts
 
 Posts are typically used for blogs or other news information because they contain a date and are sorted in reverse
 chronological order.
@@ -27,7 +27,7 @@ The `news.html` file in the root directory shows a reverse chronological listing
 TIP: Asciidoc and Markdown posts can coexist in the `_posts` folder. See the
 link:2017-03-08-asciidoc-post.html[Asciidoc post] example.
 
-## Allowed frontmatter
+== Allowed frontmatter
 
 The frontmatter you can use with posts is as follows:
 

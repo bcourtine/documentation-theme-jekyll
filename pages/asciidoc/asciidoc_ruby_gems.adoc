@@ -1,4 +1,4 @@
-# Asciidoc Ruby gems
+= Asciidoc Ruby gems
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-03-07
@@ -9,16 +9,16 @@
 :page-sidebar: asciidoc_sidebar
 :page-permalink: asciidoc_ruby_gems.html
 
-## About Ruby and gems
+== About Ruby and gems
 
 See link:mydoc_about_ruby_gems_etc.html[About Ruby, Gems, Bundler, and other prerequisites] page for a generic
 introduction about https://www.ruby-lang.org/[Ruby] and gems.
 
-## Asciidoctor gems
+== Asciidoctor gems
 
 Asciidoctor gems are defined in the `Gemfile` file.
 
-### Base gems
+=== Base gems
 
 [horizontal]
 
@@ -26,7 +26,7 @@ asciidoctor:: Asciidoctor gem, used for the Asciidoc rendering.
 
 jekyll-asciidoc:: Jekyll Asciidoc plugin, used for Asciidoc integration in a Jekyll site (variable injection, etc.).
 
-### Additional gems
+=== Additional gems
 
 [horizontal]
 

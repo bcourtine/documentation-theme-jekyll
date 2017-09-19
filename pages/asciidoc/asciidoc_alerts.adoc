@@ -1,4 +1,4 @@
-# Asciidoc Alerts
+= Asciidoc Alerts
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-03-02
@@ -10,16 +10,16 @@
 :page-permalink: asciidoc_alerts.html
 :page-liquid:
 
-## About alerts
+== About alerts
 
 Alerts are little warnings, info, or other messages that you have called out in special formatting.
 
-## Alerts
+== Alerts
 
 Alerts are a native function of Asciidoc syntax: see the "admonition" section of the
 http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#more-delimited-blocks[Syntax Quick Reference Guide].
 
-### Single paragraph alerts
+=== Single paragraph alerts
 
 [source]
 ----
@@ -30,7 +30,7 @@ Here's the result:
 
 NOTE: This is my note. All the content I type here is treated as a single paragraph.
 
-### Multiple paragraph alerts
+=== Multiple paragraph alerts
 
 Using the block syntax, an alert can contain multiple paragraphs with complex formatting (lists, tables, etc.).
 
@@ -59,7 +59,7 @@ With a second paragraph, and a list:
 * Item 2
 ====
 
-### Types of alerts available
+=== Types of alerts available
 
 There are five types of alerts you can leverage:
 
@@ -81,9 +81,9 @@ WARNING: This is my warning. All the content I type here is treated as a single 
 
 IMPORTANT: This is my important message. All the content I type here is treated as a single paragraph.
 
-## Callouts
+== Callouts
 
-### Usage
+=== Usage
 
 CAUTION: Bootstrap has 6 callout types, but since Asciidoc has only 5 alert blocks, the `primary` Bootstrap callout
 cannot be generated using Asciidoc syntax. The excluded callout can be changed editing the
@@ -134,7 +134,7 @@ A tip with *nested lists*:
 
 NOTE: It's just a stylistic preference whether to use an alert or callout.
 
-### Callout types
+=== Callout types
 
 The available callout types are :
 
@@ -172,7 +172,7 @@ Warning callout.
 Important callout.
 ====
 
-## Alert and callout rendering
+== Alert and callout rendering
 
 Alert and callout rendering style can be updated, editing the `_templates/block_admonition.html.erb` template file.
 
@@ -180,7 +180,7 @@ NOTE: When link:asciidoc_generating_pdfs.html[generating a PDF with Asciidoctor 
 the same rendering (default Asciidoc admonition rendering), since theme specific HTML templates are ignored by the
 PDF backend.
 
-## Use Liquid variables inside parameters with includes
+== Use Liquid variables inside parameters with includes
 
 [IMPORTANT]
 ====

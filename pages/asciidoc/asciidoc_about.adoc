@@ -1,4 +1,4 @@
-# Asciidoc About
+= Asciidoc About
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-03-10

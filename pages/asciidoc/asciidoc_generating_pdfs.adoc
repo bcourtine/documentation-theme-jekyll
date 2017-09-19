@@ -1,4 +1,4 @@
-# Asciidoc Generating PDFs
+= Asciidoc Generating PDFs
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-03-07
@@ -9,12 +9,12 @@
 :page-sidebar: asciidoc_sidebar
 :page-permalink: asciidoc_generating_pdfs.html
 
-## PDF overview
+== PDF overview
 
 The process for creating a single PDF for the documentation relies on Prince XML to transform the HTML content into PDF.
 It is explained on the link:mydoc_generating_pdfs.html[Generating PDFs page].
 
-## Asciidoctor PDF
+== Asciidoctor PDF
 
 https://github.com/asciidoctor/asciidoctor-pdf[Asciidoctor PDF] can convert individual Asciidoc documents into PDF
 files. It is a free standalone Ruby tool.
@@ -25,9 +25,9 @@ files. It is a free standalone Ruby tool.
 asciidoctor-pdf pages/asciidoc/asciidoc_generating_pdfs.adoc
 ----
 
-## Limitations
+== Limitations
 
-### Unsupported rendering features
+=== Unsupported rendering features
 
 The Asciidoctor PDF tool is completely distinct from Jekyll, and can be used standalone on any Asciidoc file. So
 Jekyll code is ignored.
@@ -38,7 +38,7 @@ Jekyll code is ignored.
 WARNING: If you want to generate PDFs from Asciidoc documents using Asciidoctor PDF, you must avoid passthru blocks
 and Liquid expressions.
 
-### Asciidoc parameters
+=== Asciidoc parameters
 
 Jekyll Asciidoc global configuration (in `_config.yml`) will not be used by Asciidoc PDF (usage of font icons, usage
 of experimental features, etc.).
@@ -61,7 +61,7 @@ It can also be solved duplicating theses parameters in each document:
 :source-highlighter: rouge
 ----
 
-### PDF theme
+=== PDF theme
 
 The PDF theme does not inherit from Jekyll theme customizations (Bootstrap alerts style, for example). Default PDF
 rendering theme can be modified/extended following the official

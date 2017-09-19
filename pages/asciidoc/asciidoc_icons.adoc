@@ -1,4 +1,4 @@
-# Asciidoc Icons
+= Asciidoc Icons
 :Author: Benoît Courtine
 :Email: contact@courtine.org
 :Date: 2017-03-05
@@ -9,16 +9,16 @@
 :page-sidebar: asciidoc_sidebar
 :page-permalink: asciidoc_icons.html
 
-## Font icon options
+== Font icon options
 The theme has two font icon sets integrated: Font Awesome and Glyphicons Halflings. The latter is part of Bootstrap,
 while the former is independent. Font icons allow you to insert icons drawn as vectors from a CDN (so you don't have
 any local images on your own site).
 
 Go to the http://fortawesome.github.io/Font-Awesome/icons/[Font Awesome library] to see the available icons.
 
-## Icons in an Asciidoc document
+== Icons in an Asciidoc document
 
-### Inline icon
+=== Inline icon
 
 Icons can be integrated easily in an asciidoc document, using the `icon` macro:
 
@@ -29,7 +29,7 @@ Text with an inline icon:camera[] icon.
 
 Here is the result: Text with an inline icon:camera[] icon.
 
-### Icon options
+=== Icon options
 
 The `icon` macro can be used with several parameters:
 
@@ -51,7 +51,7 @@ icon:file[size="2x"]
 
 icon:comment[flip="horizontal",role="red",size="3x"]
 
-### Other icon sets available
+=== Other icon sets available
 
 By default, Asciidoc uses Font Awesome icons. But other icon sets are supported:
 
@@ -78,7 +78,7 @@ icon:bancontact-mister-cash[set="pf"]
 WARNING: Theses icons will be rendered only if the font CSS is available in the `head.html` include file. By default,
 only Font Awesome (and Glyphicons) are included.
 
-## Glyphicon icons available
+== Glyphicon icons available
 
 Glyphicons work similarly to Font Awesome. Go to the http://getbootstrap.com/components/#glyphicons[Glyphicons library]
 to see the icons available.
