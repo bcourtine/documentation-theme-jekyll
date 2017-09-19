@@ -1,0 +1,76 @@
+# Asciidoc Equations
+:Author: Benoît Courtine
+:Email: contact@courtine.org
+:Date: 2017-09-19
+:Revision: 1.0
+:page-tags: [asciidoc, formatting]
+:page-keywords: stem equation asciimath latexmath mathematical
+:page-summary: "Add mathematical equations to pages."
+:page-sidebar: asciidoc_sidebar
+:page-permalink: asciidoc_equations.html
+:stem:
+
+## Stem support and syntax
+
+See http://asciidoctor.org/docs/user-manual/#activating-stem-support[Asciidoctor official documentation].
+
+.Some examples
+[source, adoc]
+----
+stem:[sqrt(4) = 2] <1>
+
+asciimath:[sqrt(4) = 2] <1>
+
+Water (stem:[H_2O]) is a critical component.
+
+latexmath:[C = \alpha + \beta Y^{\gamma} + \epsilon]
+----
+<1> Stem default implementation is `asciimath`. So, theses macros have the same rendering.
+
+Rendering:
+
+stem:[sqrt(4) = 2]
+
+asciimath:[sqrt(4) = 2]
+
+Water (stem:[H_2O]) is a critical component.
+
+latexmath:[C = \alpha + \beta Y^{\gamma} + \epsilon]
+
+## Enabling HTML rendering
+
+To enable HTML rendering of equations, MathJax JS have to be included. It can be achieved adding scripts in
+`_includes/head.html`:
+
+.MathJax integration in head.html
+[source, html]
+----
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+----
+
+TIP: If only a few pages require equation rendering, this code can be included page by page using a `passthru` block.
+
+## Enabling PDF rendering
+
+PDF can render stem equations using https://github.com/asciidoctor/asciidoctor-mathematical/[asciidoctor-mathematical] extension:
+
+.PDF generation with equations
+[source, bash]
+----
+asciidoctor-pdf -r asciidoctor-mathematical source.adoc dest.pdf
+----
