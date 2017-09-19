@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+gem 'github-pages', group: :jekyll_plugins
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
 gem 'jekyll', '~> 3.4.0'
 gem 'asciidoctor', '~> 1.5.5'
 gem 'pygments.rb', '~> 1.1.1'

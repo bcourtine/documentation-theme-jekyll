@@ -11,11 +11,11 @@ entries:
     type: frontmatter
     folderitems:
     - title:
-      url: /titlepage
+      url: /titlepage.html
       output: pdf
       type: frontmatter
     - title:
-      url: /tocpage
+      url: /tocpage.html
       output: pdf
       type: frontmatter
 
@@ -242,10 +242,6 @@ entries:
 
     - title: FAQ layout
       url: /mydoc_faq_layout.html
-      output: web, pdf
-
-    - title: Scroll layout
-      url: /mydoc_scroll.html
       output: web, pdf
 
     - title: Shuffle layout

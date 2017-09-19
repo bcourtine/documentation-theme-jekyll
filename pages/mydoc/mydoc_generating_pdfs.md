@@ -23,7 +23,7 @@ Also, creating a PDF this way gives you a lot more control and customization cap
 
 You can see an example of the finished product here:
 
-<a target="_blank" class="noCrossRef" href="{{ "pdf/mydoc.pdf"}}"><button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> PDF Download</button></a>
+<a target="\_blank" class="noCrossRef" href="{{ "pdf/mydoc.pdf"}}"><button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> PDF Download</button></a>
 
 ## 1. Set up Prince
 
@@ -54,17 +54,19 @@ defaults:
       layout: "page_print"
       comments: true
       search: true
+
+pdf_sidebar: mydoc_sidebar
 ```
 
 {% include note.html content="Although you're creating a PDF, you must still build an HTML web target before running Prince. Prince will pull from the HTML files and from the file-list for the TOC." %}
 
 Note that the default page layout specified by this configuration file is `page_print`. This layout strips out all the sections that shouldn't appear in the print PDF, such as the sidebar and top navigation bar.
 
-Also note that there's a `output: pdf` toggle in case you want to make some of your content unique to PDF output. For example, you could add conditional logic that checks whether `site.output` is `pdf` or `web`. If it's `pdf`, then include information only for the PDF, and so on. If you're using nav tabs, you'll definitely want to create an alternative experience in the PDF.
+Also note that there's a `output: pdf` property in case you want to make some of your content unique to PDF output. For example, you could add conditional logic that checks whether `site.output` is `pdf` or `web`. If it's `pdf`, then include information only for the PDF, and so on. If you're using nav tabs, you'll definitely want to create an alternative experience in the PDF.
 
 In the configuration file, customize the values for the `print_title` and `print_subtitle` that you want. These will appear on the title page of the PDF.
 
-## 3. Make sure your sidebar_doc.yml file has a titlepage.html and tocpage.html
+## 3. Make sure your sidebar data file has titlepage.html and tocpage.html entries
 
 There are two template pages in the root directory that are critical to the PDF:
 
@@ -74,18 +76,18 @@ There are two template pages in the root directory that are critical to the PDF:
 These pages should appear in your sidebar YML file (in this product, mydoc_sidebar.yml):
 
 ```yaml
+- title:
+  output: pdf
+  type: frontmatter
+  folderitems:
   - title:
+    url: /titlepage.html
     output: pdf
     type: frontmatter
-    folderitems:
-    - title:
-      url: /titlepage/
-      output: pdf
-      type: frontmatter
-    - title:
-      url: /tocpage/
-      output: pdf
-      type: frontmatter
+  - title:
+    url: /tocpage.html
+    output: pdf
+    type: frontmatter
 ```
 
 Leave these pages here in your sidebar. (The `output: pdf` property means they won't appear in your online TOC because the conditional logic of the sidebar.html checks whether `web` is equal to `pdf` or not before including the item in the web version of the content.)
@@ -288,7 +290,7 @@ This gets the current page:
 
 Because the theme uses JavaScript in the CSS, you have to add the `--javascript` tag in the Prince command (detailed later on this page).
 
-## 5. Customize the PDF script
+## 5. Customize and run the PDF script
 
 Duplicate the pdf-mydocf.sh file in the root directory and customize it for your specific configuration files.
 
@@ -302,7 +304,7 @@ jekyll serve --detach --config _config.yml,pdfconfigs/config_mydoc_pdf.yml;
 echo "done";
 
 echo "Building the PDF ...";
-prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o _pdf/mydoc.pdf;
+prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/mydoc.pdf;
 echo "done";
 ```
 
@@ -316,27 +318,19 @@ Make sure that the path to the prince-list.txt is correct. For the output direct
 
 {% include note.html content="You might not want to include the PDF in your project files, since you're likely committing the PDF to Github and as a result saving the changes from one PDF version to another with each save." %}
 
-## 6. Add conditions for your new builds in the sidebarconfigs.html file
+## 6. Add conditions for your new builds in the PDF config file
 
-In the \_includes/custom/sidebarconfigs.html file, there's a section that looks like this:
+In the PDF configuration file, there's a section that looks like this:
 
 ```
 {% raw %}{% if site.product == "mydoc" %}
-{% assign sidebar_pdf = site.data.sidebars.mydoc_sidebar.entries %}
+pdf_sidebar: product2_sidebar
 {% endif %}
-
-{% if site.product == "product1" %}
-{% assign sidebar_pdf = site.data.sidebars.product1_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "product2" %}
-{% assign sidebar_pdf = site.data.sidebars.product2_sidebar.entries %}
-{% endif %}{% endraw %}
 ```
 
-Add your own condition here that points to your sidebar.
+Point to the sidebar you want here.
 
-What this does is allow the prince-list.txt and toc.html files to use a variable for the sidebar (called `sidebar_pdf`) when iterating through the sidebar. Otherwise, you would need to create a unique prince-list.txt and toc.html file for each separate PDF output you have.
+What this does is allow the prince-list.txt and toc.html files to iterate through the right sidebar.  Otherwise, you would need to create a unique prince-list.txt and toc.html file for each separate PDF output you have.
 
 ## 7. Add a download button for the PDF
 
@@ -348,7 +342,7 @@ You can add a download button for your PDF using some Bootstrap button code:
 
 Here's what that looks like:
 
-<a target="_blank" class="noCrossRef" href={{ "pdf/mydoc.pdf"}}"><button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> PDF Download</button></a>
+<a target="\_blank" class="noCrossRef" href={{ "pdf/mydoc.pdf"}}"><button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> PDF Download</button></a>
 
 ## JavaScript conflicts
 
@@ -364,13 +358,11 @@ You need to conditionalize out any JavaScript from your PDF web output before bu
 
 Then surround the JavaScript with conditional tags like this:
 
-{% raw %}
 ```
-{% unless site.output == "pdf" %}
+{% raw %}{% unless site.output == "pdf" %}
 javascript content here ...
-{% endunless %}
+{% endunless %}{% endraw %}
 ```
-{% endraw %}
 
 For more detail about using `unless` in conditional logic, see [Conditional logic][mydoc_conditional_logic]. What this code means is "run this code unless this value is the case."
 

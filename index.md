@@ -13,7 +13,7 @@ Follow these instructions to build the theme.
 
 ### 1. Download the theme
 
-First download or clone the theme from the [Github repo](https://github.com/tomjohnson1492/documentation-theme-jekyll). Most likely you won't be pulling in updates once you start customizing the theme, so downloading the theme (instead of cloning it) probably makes the most sense. In Github, click the **Clone or download** button, and then click **Download ZIP**.
+First download or clone the theme from the [Github repo](https://github.com/tomjoht/documentation-theme-jekyll). Most likely you won't be pulling in updates once you start customizing the theme, so downloading the theme (instead of cloning it) probably makes the most sense. In Github, click the **Clone or download** button, and then click **Download ZIP**.
 
 ### 2. Install Jekyll
 
@@ -74,47 +74,18 @@ If you want to shorten this long command, you can put this code in a file such a
 ## Running the site in Docker
 
 You can also use Docker to directly build and run the site on your local machine. Just clone the repo and run the following from your working dir:
+```
+docker-compose build --no-cache && docker-compose up
+```
+The site should now be running at [http://localhost:4000/](http://localhost:4000/).
 
-```
-docker build --no-cache -t mydocs .
-```
-
-Once the build is complete, you can mount and run the whole site as follows:
-
-```
-docker run -v "$PWD:/src" -p 4000:4000 mydocs serve -H 0.0.0.0
-```
 This is perhaps the easiest way to see how your site would actually look.
 
 ## Configure the sidebar
 
 There are several products in this theme. Each product uses a different sidebar. This is the essence of what makes this theme unique -- different sidebars for different product documentation. The idea is that when users are reading documentation for a specific product, the sidebar navigation should be specific to that product. (You can read more of my thoughts on why multiple sidebars are important in this [blog post](http://idratherbewriting.com/2016/03/23/release-of-documentation-theme-for-jekyll-50/).)
 
-The top navigation remains the same, because it allows users to navigate across products. But the sidebar navigation adapts to the product.
-
-Because each product uses a different sidebar, you'll need to set up your sidebars. There's a file inside \_includes/custom called "sidebarconfigs.html." This file controls which sidebar gets associated with which product. Open up this file to see its contents.
-
-The sidebarconfigs.html file uses simple `if elsif` logic to set a variable that the sidebar.html file uses to read the sidebar data file. The code in sidebarconfigs.html looks like this:
-
-{% raw %}
-```liquid
-{% if page.sidebar == "home_sidebar" %}
-{% assign sidebar = site.data.sidebars.home_sidebar.entries %}
-
-{% elsif page.sidebar == "product1_sidebar" %}
-{% assign sidebar = site.data.sidebars.product1_sidebar.entries %}
-
-{% elsif page.sidebar == "product2_sidebar" %}
-{% assign sidebar = site.data.sidebars.product2_sidebar.entries %}
-
-{% elsif page.sidebar == "mydoc_sidebar" %}
-{% assign sidebar = site.data.sidebars.mydoc_sidebar.entries %}
-
-{% else %}
-{% assign sidebar = site.data.sidebars.home_sidebar.entries %}
-{% endif %}
-```
-{% endraw %}
+The top navigation usually remains the same, because it allows users to navigate across products. But the sidebar navigation adapts to the product.
 
 In each page's frontmatter, you must specify the sidebar you want that page to use. Here's an example of the page frontmatter showing the sidebar property:
 
@@ -130,19 +101,74 @@ permalink: mydoc_alerts
 ---
 </pre>
 
-The `sidebar: mydoc_sidebar` refers to the \_data/sidebars/mydoc_sidebar.yml file (meaning, the mydoc_sidebar.yml file inside the sidebars subfolder inside the \data folder).
+The `sidebar: mydoc_sidebar` refers to the \_data/sidebars/mydoc_sidebar.yml file.
 
-If no sidebar assignment is found in the page frontmatter, the default sidebar (specified by the `else` statement) will be shown: `site.data.sidebars.home_sidebar.entries`.
+Note that your sidebar can only have 2 levels (expand the **Tag archives** option to see an example of the second level). Given that each product has its own sidebar, this depth should be sufficient (it's really like 3 levels). Deeper nesting goes against usability recommendations.
 
-Note that your sidebar can only have 2 levels. Given that each product has its own sidebar, this depth should be sufficient (it's really like 3 levels). Deeper nesting goes against usability recommendations.
+You can optionally turn off the sidebar on any page (e.g. landing pages). To turn off the sidebar for a page, you should set the page frontmatter tag as `hide_sidebar: true`.
 
-{% include note.html content="Note that each level must have at least one topic before the next level starts. You can't have a second level that contains multiple third levels without having at least one standalone topic in the second level." %}
+If you don't declare a sidebar, the `home_sidebar` file gets used as the default because this is the default specified in the config file:
+
+```yaml
+-
+  scope:
+    path: ""
+    type: "pages"
+  values:
+    layout: "page"
+    comments: true
+    search: true
+    sidebar: home_sidebar
+    topnav: topnav
+```
+
+If you want to set different sidebar defaults based on different folders for your pages, specify your defaults like this:
+
+```
+-
+  scope:
+    path: "pages/mydoc"
+    type: "pages"
+  values:
+    layout: "page"
+    comments: true
+    search: true
+    sidebar: mydoc_sidebar
+    topnav: topnav
+```
+
+This would load the `mydoc_sidebar` for each file in **pages/mydoc**. You could set different defaults for different path scopes.
 
 For more detail on the sidebar, see [Sidebar navigation][mydoc_sidebar_navigation].
 
+## Top navigation
+
+The top navigation works just like the sidebar. You can specify which topnav data file should load by adding a `topnav` property in your page, like this:
+
+```yaml
+topnav: topnav
+```
+
+Here the topnav refers to the \_data/topnav.yml file.
+
+Because most topnav options will be the same, the \_config.yml file specifies the topnav file as a default:
+
+```yaml
+-
+  scope:
+    path: ""
+    type: "pages"
+  values:
+    layout: "page"
+    comments: true
+    search: true
+    sidebar: home_sidebar
+    topnav: topnav
+```
+
 ## Sidebar syntax
 
-The sidebar data file uses a specific YAML syntax that you must follow. Follow the sample pattern shown in the theme. For example:
+The sidebar data file uses a specific YAML syntax that you must follow. Follow the sample pattern shown in the theme, specically looking at mydoc_sidebar.yml as an example: Here's a code sample showing all levels:
 
 ```yaml
 entries:
@@ -150,7 +176,6 @@ entries:
   product: Jekyll Doc Theme
   version: 6.0
   folders:
-
   - title: Overview
     output: web, pdf
     folderitems:
@@ -158,21 +183,10 @@ entries:
     - title: Get started
       url: /index.html
       output: web, pdf
+      type: homepage
 
     - title: Introduction
       url: /mydoc_introduction.html
-      output: web, pdf
-
-    - title: Supported features
-      url: /mydoc_supported_features.html
-      output: web, pdf
-
-    - title: About the theme author
-      url: /mydoc_about.html
-      output: web, pdf
-
-    - title: Support
-      url: /mydoc_support.html
       output: web, pdf
 
   - title: Release Notes
@@ -187,6 +201,30 @@ entries:
       url: /mydoc_release_notes_50.html
       output: web, pdf
 
+  - title: Tag archives
+    output: web
+    folderitems:
+
+    - title: Tag archives overview
+      url: /mydoc_tag_archives_overview.html
+      output: web
+
+      subfolders:
+      - title: Tag archive pages
+        output: web
+        subfolderitems:
+
+        - title: Formatting pages
+          url: /tag_formatting.html
+          output: web
+
+        - title: Navigation pages
+          url: /tag_navigation.html
+          output: web
+
+        - title: Content types pages
+          url: /tag_content_types.html
+          output: web
 ```
 
 Each `folder` or `subfolder` must contain a `title` and `output` property. Each `folderitem` or `subfolderitem` must contain a `title`, `url`, and `output` property.
@@ -194,6 +232,51 @@ Each `folder` or `subfolder` must contain a `title` and `output` property. Each 
 The two outputs available are `web` and `pdf`. (Even if you aren't publishing PDF, you still need to specify `output: web`).
 
 The YAML syntax depends on exact spacing, so make sure you follow the pattern shown in the sample sidebars. See my [YAML tutorial](mydoc_yaml_tutorial) for more details about how YAML works.
+
+{% include note.html content="If you have just one character of spacing off, Jekyll won't build due to the YAML syntax error. You'll see an error message in your console that says \"Error ... did not find expected key while parsing a block mapping at line 22 column 5. Error: Run jekyll build --trace for more information.\" If you encounter this, it usually refers to incorrect indentation or spacing in the YAML file. See the example mydoc_sidebar.yml file to see where your formatting went wrong." %}
+
+Each level must have at least one topic before the next level starts. You can't have a second level that contains multiple third levels without having at least one standalone topic in the second level. If you need a hierarchy that has a folder that contains other folders and no loose topics, use a blank `-` item like this:
+
+```yamll
+entries:
+- title: sidebar
+  product: Jekyll Doc Theme
+  version: 6.0
+  folders:
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    -
+
+  - title: Release Notes
+    output: web, pdf
+    folderitems:
+
+    - title: 6.0 Release notes
+      url: /mydoc_release_notes_60.html
+      output: web, pdf
+
+    - title: 5.0 Release notes
+      url: /mydoc_release_notes_50.html
+      output: web, pdf
+
+  - title: Installation
+    output: web, pdf
+    folderitems:
+
+    - title: About Ruby, Gems, Bundler, etc.
+      url: /mydoc_about_ruby_gems_etc.html
+      output: web, pdf
+
+    - title: Install Jekyll on Mac
+      url: /mydoc_install_jekyll_on_mac.html
+      output: web, pdf
+
+    - title: Install Jekyll on Windows
+      url: /mydoc_install_jekyll_on_windows.html
+      output: web, pdf
+```
 
 To accommodate the title page and table of contents in PDF outputs, each product sidebar must list these pages before any other:
 

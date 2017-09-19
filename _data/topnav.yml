@@ -3,6 +3,8 @@
 topnav:
 - title: Topnav
   items:
+    - title: GitHub
+      external_url: https://github.com/tomjoht/documentation-theme-jekyll
     - title: News
       url: /news
 
@@ -10,11 +12,8 @@ topnav:
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: Resources
+    - title: Jekyll Help
       folderitems:
-        # Jekyll resources
-        - title: Jekyll Github Repo
-          external_url: https://github.com/tomjohnson1492/documentation-theme-jekyll
         - title: Jekyll Talk
           external_url: https://talk.jekyllrb.com
         - title: Jekyll documentation
