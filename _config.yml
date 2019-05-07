@@ -120,9 +120,10 @@ asciidoctor:
   template_dir: _templates
   base_dir: :docdir
   attributes:
-    source-highlighter: pygments
-    pygments-stylesheet: !
+    source-highlighter: rouge
+    rouge-css: class
     icons: font
     imagesdir: images
     stylesdir: css
     experimental: 'true'
+    numbered: 'true'
