@@ -1,5 +1,5 @@
 ---
-title: Getting started with the Documentation Theme for Jekyll
+title: "Getting started with the Documentation Theme for Jekyll"
 keywords: sample homepage
 tags: [getting_started]
 sidebar: mydoc_sidebar
@@ -7,13 +7,15 @@ permalink: index.html
 summary: These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll.
 ---
 
+{% include note.html content="If you're cloning this theme, you're probably writing documentation of some kind. I have a blog on technical writing here called <a alt='technical writing blog' href='http://idratherbewriting.com'>I'd Rather Be Writing</a>. If you'd like to stay updated with the latest trends, best practices, and other methods for writing documentation, consider <a href='https://tinyletter.com/tomjoht'>subscribing</a>. I also have a site on <a href='http://idratherbewriting.com/learnapidoc'>writing API documentation</a>." %}
+
 ## Build the Theme
 
 Follow these instructions to build the theme.
 
 ### 1. Download the theme
 
-First download or clone the theme from the [Github repo](https://github.com/tomjoht/documentation-theme-jekyll). Most likely you won't be pulling in updates once you start customizing the theme, so downloading the theme (instead of cloning it) probably makes the most sense. In Github, click the **Clone or download** button, and then click **Download ZIP**.
+First, download or clone the theme from the [Github repo](https://github.com/tomjoht/documentation-theme-jekyll). Most likely you won't be pulling in updates once you start customizing the theme, so downloading the theme (instead of cloning it) probably makes the most sense. In Github, click the **Clone or download** button, and then click **Download ZIP**.
 
 ### 2. Install Jekyll
 
@@ -36,7 +38,7 @@ You'll want [Bundler](http://bundler.io/) to make sure all the Ruby gems needed 
 
 Use this option if you're not planning to publish your Jekyll site using [Github Pages](https://pages.github.com/).
 
-Bundler's Gemfile is how it specifies and manages project dependencies are managed. Although this project includes a Gemfile, this theme doesn't have any dependencies beyond core Jekyll. The Gemfile is used to specify gems needed for publishing on Github Pages. **If you're not planning to have Github Pages build your Jekyll project, delete these two files from the theme's root directory:**
+Bundler's Gemfile specifies how project dependencies are managed. Although this project includes a Gemfile, this theme doesn't have any dependencies beyond core Jekyll. The Gemfile is used to list gems needed for publishing on Github Pages. **If you're not planning to have Github Pages build your Jekyll project, delete these two files from the theme's root directory:**
 
 * Gemfile
 * Gemfile.lock
@@ -149,9 +151,9 @@ The top navigation works just like the sidebar. You can specify which topnav dat
 topnav: topnav
 ```
 
-Here the topnav refers to the \_data/topnav.yml file.
+Here the topnav refers to the `_data/topnav.yml` file.
 
-Because most topnav options will be the same, the \_config.yml file specifies the topnav file as a default:
+Because most topnav options will be the same, the `_config.yml` file specifies the topnav file as a default:
 
 ```yaml
 -
@@ -168,7 +170,7 @@ Because most topnav options will be the same, the \_config.yml file specifies th
 
 ## Sidebar syntax
 
-The sidebar data file uses a specific YAML syntax that you must follow. Follow the sample pattern shown in the theme, specically looking at mydoc_sidebar.yml as an example: Here's a code sample showing all levels:
+The sidebar data file uses a specific YAML syntax that you must follow. Follow the sample pattern shown in the theme, specically looking at `mydoc_sidebar.yml` as an example: Here's a code sample showing all levels:
 
 ```yaml
 entries:
@@ -237,7 +239,7 @@ The YAML syntax depends on exact spacing, so make sure you follow the pattern sh
 
 Each level must have at least one topic before the next level starts. You can't have a second level that contains multiple third levels without having at least one standalone topic in the second level. If you need a hierarchy that has a folder that contains other folders and no loose topics, use a blank `-` item like this:
 
-```yamll
+```yaml
 entries:
 - title: sidebar
   product: Jekyll Doc Theme
